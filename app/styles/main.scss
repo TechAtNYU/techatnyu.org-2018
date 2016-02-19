@@ -1,89 +1,112 @@
-// bower:scss
-// endbower
+/*---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+*/
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+
+// Our variables
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
 }
-
-body {
+* {
+  margin: 0;
   padding: 0;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+
+
+.universal-section__reset {
+  clear: both;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;
+}
+input[type="text"], input[type="email"], input[type="submit"], button {
+  font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
+.universal-section--primary, .universal-section--secondary {
+  float: left;
+  box-sizing: border-box;
+  padding: 8px 20px;
+}
+.universal-section--primary {
+  width: 60%;
+  min-width: 400px;
+}
+.universal-section--secondary {
+  width: 40%;
+  min-width: 400px;
+}
+.universal__copy, .universal-section__reset p {
+  line-height: 1.25;
+  margin: 0.5em 0;
+}
+.universal-section__reset blockquote {
+  font-size: 125%;
+}
+.universal__button {
+  padding: 5px 10px;
+  border-bottom: 2px solid black;
+  border-radius: 6px;
+  text-decoration: none;
+  background-color: #65408b; /* temp */
+  color: white;
+  transition: all 0.5s;
+}
+.universal__button:hover {
+  background-color: #d7552d;
+  cursor: pointer;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.sample__article {
+  width: 50%;
+  margin: auto;
+  font-size: 2em;
+}
+.sample__article p {
+  line-height: 1.25;
+  margin: 0.5em 0;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
-}
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting",
+        "_head_foot"
+;

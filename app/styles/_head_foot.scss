@@ -1,0 +1,237 @@
+/* ~*~*~*~*~*~*~*~*~*~*~*~
+tech@NYU permanav - universal header
+version 1.0.0 * https://github.com/TechAtNYU/permanav
+- - -
+colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/colors
+~*~*~*~*~*~*~*~*~*~*~*~ */
+
+.uniheader__wrapper {
+	position: fixed;
+	z-index: 10;
+	background-color: rgba(255, 255, 255, .98);
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
+}
+
+/* ~~~~~~~
+// PRIMARY HEADER 
+~~~~~~~~~~ */
+
+.uniheader__primary { 
+	margin: 0;
+	padding: 8px 20px 0;
+	background-color: #d7552d; /* flame pea / orange */
+	min-height: 58px;
+	vertical-align: middle;
+	border-bottom: 2px solid #65408B;
+}
+
+.uniheader__primary ::-webkit-input-placeholder {
+   color: #888;
+}
+.uniheader__primary :-moz-placeholder { /* Firefox 18- */
+   color: #888;  
+}
+.uniheader__primary ::-moz-placeholder {  /* Firefox 19+ */
+   color: #888;  
+}
+.uniheader__primary :-ms-input-placeholder {  
+   color: #888;  
+}
+.uniheader__homelink, .uniheader__logo, .uniheader__calendar-icon {
+	height: 48px;
+	display: inline-block;
+}
+.uh__secondary-trigger {
+	text-decoration: none;
+}
+
+/* left side */
+.uniheader__about {
+	width: 60%;
+	float: left;
+}
+.uniheader__logo, .uniheader__title, .uniheader__plusplus {
+	display: inline-block;
+}
+.uniheader__title, .uniheader__plusplus {
+	font-size: 24px;
+	text-transform: uppercase;
+	position: relative;
+}
+.uniheader__plusplus {
+	left: -8px;
+	top: -18px;
+}
+.uniheader__title {
+	padding-left: 4px;
+	top: 0px;
+	height: 40px;
+	width: 74%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
+.uniheader__special {
+	padding-bottom: 6px;
+	border-bottom: 2px solid black;
+}
+.uniheader__special-link {
+	color: black;
+	text-decoration: none;
+}
+
+/* right side */
+.uniheader__meta {
+	float: right;
+	width: 38%;
+	text-align: right;
+}
+.uniheader__calendar-icon {
+	width: 48px;
+	height: 48px;
+}
+.uniheader__calendar-icon .calendar {
+	fill: #65408b; /* affair / purple */
+}
+.rsvp-header__button {
+	border: 2px solid #65408b;
+	background: transparent;
+	color: #65408b;
+	position: relative;
+	top: -18px;
+	transition: all 0.5s;
+	margin-right: 1em;
+	/*box-shadow: 0 2px 0 black;*/
+}
+.rsvp-header__button:hover {
+	background-color: white;
+}
+.uniheader__newslettersub {
+	background-color: transparent;
+	border: none;
+	background-color: rgba(255,255,255,0.5);
+	padding: 1em;
+	font-size: 16px;
+	width: 65%;
+}
+.uniheader__newslettersub:focus {
+	background-color: rgba(255,255,255,0.9);
+	outline: none;
+}
+.uh__minical-cta {
+	float: right;
+	margin-top: 0.25em;
+}
+
+.tempCAL {
+	width: 100%;
+	border: 2px solid black;
+	height: 230px;
+}
+
+
+/* ~~~~~~~
+// SECONDARY HEADER 
+~~~~~~~~~~ */
+
+.uniheader__secondary {
+	min-height: 30em;
+	display: none; /* temporary */
+}
+.uh-secondary__about, .uh-secondary__minical {
+	height: 18em;
+}
+.uh-subscriptions {
+	box-sizing: border-box;
+	width: 100%;
+	border-top: 2px solid #d7552d;
+	clear: both;
+	padding: 0 1em;
+	min-height: 52px;
+	background-color: #eee;
+	overflow: auto;
+}
+.uh__social-media {
+	display: inline-block;
+	margin: 0;
+}
+.uh__social-media:first-of-type {
+	width: 62%;
+}
+.uh__social-media:last-of-type {
+	float: right;
+	width: 38%;
+}
+.uh-sm {
+	display: inline-block;
+	list-style: none;
+	margin: 0;
+}
+.uh-sm__sub {
+	width: 55%;
+	float: left;
+}
+.uh-sm:not(.uh-sm__sub) {
+	border-left: 1px solid #ccc;
+	display: inline-block;
+	padding: 1em;
+	text-align: center;
+}
+.uh-sm__sub-caption {
+	display: inline-block;
+	width: 40%;
+	font-size: 0.8em;
+	padding-top: 0.125em;
+	color: #888;
+}
+.newsletter__subscribe {
+	padding: 1em;
+	border: none;
+	font-size: 1em;
+	border-radius: 0;
+	margin-left: -0.5em;
+}
+.newsletter__subscribe:focus {
+	outline: none;
+}
+
+/* ~*~*~*~*~*~*~*~*~*~*~*~
+tech@NYU permanav - universal orgchart footer
+version 1.0.0 * https://github.com/TechAtNYU/permanav
+- - -
+colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/colors
+~*~*~*~*~*~*~*~*~*~*~*~ */
+.uniheader__footer--orgchart {
+	background-color: #65408B;
+	border-bottom: 2px solid #d7552d;
+	overflow: auto; /* jank clearfix */
+	padding: 12px 0;
+}
+.uf-orgchart__tags li {
+	display: inline-block;
+	list-style: none;
+}
+.orgchart-tag {
+	border: 2px solid black;
+	padding: 4px 8px;
+	margin-bottom: 6px;
+	cursor: pointer;
+	border-radius: 2px;
+}
+.orgchart-tag--co {
+}
+
+/* ~*~*~*~*~*~*~*~*~*~*~*~
+tech@NYU permanav - universal footer
+version 1.0.0 * https://github.com/TechAtNYU/permanav
+- - -
+colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/colors
+~*~*~*~*~*~*~*~*~*~*~*~ */
+.uniheader__footer--main {
+	background-color: #152A5B;
+}
+.unifooter__main {
+	overflow: auto; /* janky clearfix */
+	color: white;
+}
