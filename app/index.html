@@ -2,30 +2,36 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tech@NYU</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-     <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script data-cfasync="false" type="text/javascript" src="//use.typekit.net/bpm7cfb.js"></script>
     <style type="text/css">.tk-ff-meta-web-pro{font-family:"ff-meta-web-pro",sans-serif;}</style>
   </head>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#uniheaderSecondaryTrigger').on('click', function() {
+        $(".uniheader__secondary").toggle();
+      });
+    });
+</script>
   <body ng-app="techatnyuorgApp">
       <div class="uniheader__wrapper universal-section__reset">
       <!-- UNIVERSAL HEADER 0.1.0 -->
         <header class="uniheader__primary" id="top">
           <div class="uniheader__about">
             <a href="http://www.techatnyu.org" class="uniheader__homelink"><img src="http://nyusw.com/lib/logos/techatnyu.png" alt="tech@nyu logo" class="uniheader__logo"/></a>
-            <h1 class="uniheader__title">// 
-              
+            <h1 class="uniheader__title">//          
                 Tech@NYU Fam-Boilerplate
-              
             </h1>
           </div>
           <div class="uniheader__meta">
             <a href="http://rsvp.techatnyu.org" class="universal__button rsvp-header__button">RSVP to Events</a>
-            <a href="#" class="uh__secondary-trigger" id="uniheaderSecondaryTrigger">
+            <a href="" class="uh__secondary-trigger" id="uniheaderSecondaryTrigger">
               <svg version="1.1" id="Capa_1" class="uniheader__calendar-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="595.28px" height="841.89px" viewBox="0 0 595.28 841.89" enable-background="new 0 0 595.28 841.89" xml:space="preserve">
                 <path class="calendar" fill="#010002" d="M156.47,628.632h12.115v-43.388h75.09v43.388h12.135v-43.388h78.632v43.388h12.155v-43.388h83.661v43.388 h12.114v-43.388h69.572V573.15h-69.572v-78.612h69.572v-12.135h-69.572v-71.649h69.572V398.66h-69.572v-48.397h-12.114v48.397 h-83.661v-48.397h-12.155v48.397h-78.632v-48.397h-12.135v48.397h-75.11v-48.397H156.47v48.397h-80.18v12.094h80.18v71.649h-80.18 v12.135h80.18v78.612h-80.18v12.094h80.18V628.632z M255.789,573.15v-78.612h78.632v78.612H255.789z M430.258,573.15h-83.661 v-78.612h83.661V573.15z M430.258,410.755v71.649h-83.661v-71.649C346.597,410.775,430.258,410.775,430.258,410.755z M334.442,410.755v71.649h-78.632v-71.649C255.809,410.775,334.442,410.775,334.442,410.755z M168.565,410.755h75.09v71.649 h-75.09V410.755z M168.565,494.538h75.09v78.612h-75.09V494.538z"/>
                 <path class="calendar" fill="#010002" d="M594.669,174.288l-84.069,0.081l-12.277,0.041v49.843c0,13.295-10.872,24.168-24.188,24.168h-28.26 c-13.357,0-24.188-10.852-24.188-24.168v-49.761l-32.231,0.041v49.72c0,13.295-10.893,24.168-24.249,24.168h-28.26 c-13.336,0-24.188-10.852-24.188-24.168v-49.7l-34.246,0.081v49.639c0,13.295-10.872,24.168-24.209,24.168h-28.281 c-13.295,0-24.188-10.852-24.188-24.168v-49.557h-35.264v49.557c0,13.295-10.852,24.168-24.188,24.168h-28.26 c-13.356,0-24.209-10.852-24.209-24.168v-49.456L0,174.899v532.488h42.553h510.234l42.492-0.122L594.669,174.288z M552.788,665.017H42.553V324.813h510.234V665.017z"/>
@@ -92,11 +98,8 @@
           </section>
         </header>
       </div>
-      <header>
-          <h1>Tech@NYU Fam-Boilerplate</h1>
-      </header>
-      <div class="container">
-        <div ng-view=""></div>
+      <div class="container" ng-view="">
+
       </div>
       <div class="uniheader__footer--orgchart universal-section__reset">
         <!-- UNIVERSAL ORGCHART FOOTER 1.0.0 -->

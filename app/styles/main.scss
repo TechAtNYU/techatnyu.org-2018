@@ -46,8 +46,15 @@ $on-laptop:        800px;
   padding: 0;
 }
 
-
-
+div > section {
+  height: 90vh;
+  margin: auto;
+  border-bottom: 2px solid red;
+}
+.container {
+    position: relative;  
+    top: 80px;
+}
 .universal-section__reset {
   clear: both;
   box-sizing: border-box;
@@ -92,15 +99,6 @@ input[type="text"], input[type="email"], input[type="submit"], button {
   cursor: pointer;
 }
 
-.sample__article {
-  width: 50%;
-  margin: auto;
-  font-size: 2em;
-}
-.sample__article p {
-  line-height: 1.25;
-  margin: 0.5em 0;
-}
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)

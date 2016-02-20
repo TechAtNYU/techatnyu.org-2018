@@ -23,6 +23,7 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 	min-height: 58px;
 	vertical-align: middle;
 	border-bottom: 2px solid #65408B;
+	overflow: hidden;
 }
 
 .uniheader__primary ::-webkit-input-placeholder {
@@ -202,11 +203,15 @@ version 1.0.0 * https://github.com/TechAtNYU/permanav
 - - -
 colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/colors
 ~*~*~*~*~*~*~*~*~*~*~*~ */
+
+
 .uniheader__footer--orgchart {
 	background-color: #65408B;
 	border-bottom: 2px solid #d7552d;
 	overflow: auto; /* jank clearfix */
 	padding: 12px 0;
+	position: relative;
+	top: 80px;
 }
 .uf-orgchart__tags li {
 	display: inline-block;
