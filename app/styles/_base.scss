@@ -66,14 +66,13 @@ ul, ol {
     margin-left: $spacing-unit;
 }
 
-li {
+li{
+        list-style: none;
     > ul,
     > ol {
          margin-bottom: 0;
     }
 }
-
-
 
 /**
  * Headings
@@ -101,7 +100,12 @@ a {
     }
 }
 
-
+/** 
+    Paragraphs
+**/
+p {
+    max-width: 650px;
+}
 
 /**
  * Blockquotes
@@ -118,6 +122,7 @@ blockquote {
         margin-bottom: 0;
     }
 }
+/** div like tags **/
 
 
 

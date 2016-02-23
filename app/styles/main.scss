@@ -6,12 +6,13 @@
 
 
 // Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-family: "ff-meta-web-pro";
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
 $spacing-unit:     30px;
+
 
 $text-color:       #111;
 $background-color: #fdfdfd;
@@ -48,12 +49,22 @@ $on-laptop:        800px;
 
 .intro {
   height: 90vh;
-  margin: auto;
-  border-bottom: 2px solid red;
+  display:flex;
+  align-items: center;
+  justify-content: center;  border-bottom: 2px solid red;
 }
+
 .container {
     position: relative;  
     top: 80px;
+}
+.container {
+  section *:not(.orgchart-tag) {
+    margin: 0 40px 0 40px;
+  }
+  section {
+    padding: 15px;
+  }
 }
 .universal-section__reset {
   clear: both;
