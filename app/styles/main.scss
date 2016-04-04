@@ -6,7 +6,8 @@
 
 
 // Our variables
-$base-font-family: "ff-meta-web-pro";
+$head-font: "ff-meta-web-pro";
+$body-font: "Inconsolata", sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
@@ -18,9 +19,10 @@ $text-color:       #111;
 $background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
 
-$grey-color:       #828282;
+$grey-color:       #EEEEEE;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
+$orange: #D7552D;
 
 // Width of the content area
 $content-width:    800px;
@@ -47,33 +49,72 @@ $on-laptop:        800px;
   padding: 0;
 }
 
+
 .intro {
-  height: 90vh;
+  width: 100%;
   display:flex;
   align-items: center;
-  justify-content: center;  border-bottom: 2px solid red;
+  justify-content: center; 
+  background: url("../images/3.JPG") center center no-repeat;
+  background-size: cover;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,$orange,$orange);
+    opacity: .6; 
+  }
+  p {
+      font-size: 24px;
+      color: white;
+      z-index: 5;
+  }
+}
+.about-short {
+  height: 70vh;
+  background: red;
+  h2 {
+    font-size: 3em;
+    line-height: 1;
+  }
+  .short-description div:not(.img) {
+      float:left;
+      max-width: 400px;
+      p {
+        font-size: 20px;
+      }
+      span {
+        display: inline-block;
+      }
+      p, span {
+        margin-top: 40px;
+      }
+  }
+  .short-description .img {
+    float: right;
+
+  }
 }
 
-.container {
-    position: relative;  
-    top: 80px;
+section *:not(.orgchart-tag) {
+  margin: 40px 40px 0 40px;
 }
-.container {
-  section *:not(.orgchart-tag) {
-    margin: 0 40px 0 40px;
-  }
-  section {
-    padding: 15px;
-  }
+section:not(.intro) {
+  padding: 15px;
 }
+
+
 .universal-section__reset {
   clear: both;
   box-sizing: border-box;
   width: 100%;
-  font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;
+  font-family: $body-font, Helvetica, Arial, Sans-Serif;
 }
 input[type="text"], input[type="email"], input[type="submit"], button {
-  font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;
+  font-family: $body-font, Helvetica, Arial, Sans-Serif;
 }
 
 .universal-section--primary, .universal-section--secondary {
@@ -110,7 +151,9 @@ input[type="text"], input[type="email"], input[type="submit"], button {
   cursor: pointer;
 }
 
-
+.hidden {
+  display: none;
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import

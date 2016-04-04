@@ -22,7 +22,9 @@
         color: $grey-color-dark;
     }
 }
-
+section {
+    height: 100vh;
+}
 .site-nav {
     float: right;
     line-height: 56px;
