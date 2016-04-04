@@ -20,8 +20,9 @@ $background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
 
 $grey-color:       #EEEEEE;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$secondary-grey:   #828282;
+$grey-color-light: lighten($secondary-grey, 40%);
+$grey-color-dark:  darken($secondary-grey, 25%);
 $orange: #D7552D;
 
 // Width of the content area
@@ -74,8 +75,7 @@ $on-laptop:        800px;
   }
 }
 .about-short {
-  height: 70vh;
-  background: red;
+  height: 80vh;
   h2 {
     font-size: 3em;
     line-height: 1;

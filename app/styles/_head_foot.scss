@@ -16,16 +16,16 @@
 }
 
 .uniheader__primary ::-webkit-input-placeholder {
-   color: #888;
+   color: white;
 }
 .uniheader__primary :-moz-placeholder { /* Firefox 18- */
-   color: #888;  
+   color: white;  
 }
 .uniheader__primary ::-moz-placeholder {  /* Firefox 19+ */
-   color: #888;  
+   color: white;  
 }
 .uniheader__primary :-ms-input-placeholder {  
-   color: #888;  
+   color: white;  
 }
 .uniheader__homelink, .uniheader__logo {
 	display: inline-block;
@@ -44,26 +44,27 @@
 /* right side */
 .uniheader__meta {
 	width: 100%;
-	height: inherit;
 	text-transform: uppercase;
 	.sub {
-		width: 60%;
-		display: inline-block;
+		left: 35%;
 		position: relative;
-		left: 30%;
 	}
 	.nav, .sub {
-		height: 100%;
+		height: 65px;
 	}
 	.nav {
-		width: 30%;
 		display:inline-block;
 		position: absolute;
-		margin-top: 1.5em;
+	}
+	.nav:first-child {
+		width: 35%;
+	}
+	.nav:last-child{
+		left: 73%;
 	}
 	.nav li {
-		display:inline;
-		padding: 10px;
+		display:inline-block;
+		height: inherit;
 	}
 }
 .rsvp-header__button {
@@ -80,14 +81,16 @@
 	background-color: white;
 }
 .uniheader__newslettersub {
-	background-color: $grey-color;
+	background-color: $secondary-grey;
 	border: none;
 	padding: 0 12px;
 	font-size: 14px;
 	width: 35%;
+	color: white;
 }
 .newsletter__subscribe, .uniheader__newslettersub {
 	height: 65px;
+	text-transform: uppercase;
 }
 .newsletter__subscribe {
 	border: none;
@@ -98,7 +101,22 @@
 .uniheader__newslettersub:focus {
 	outline: none;
 }
+.nav:last-child li{
+	background: $grey-color-light;
+}
+.sub {
+	width: 60%;
 
+}
+.nav, .sub {
+	height: 65px;
+	display: inline-block;
+}
+.nav li {
+	display:inline-block;
+	padding: 0 20px;
+	height: inherit;
+}
 
 .orgchart {
 	background-color: #65408B;
@@ -130,7 +148,8 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 ~*~*~*~*~*~*~*~*~*~*~*~ */
 .unifooter__main {
 	position: relative;
-	top: 600px;
+	top: 60px;
 	background-color: #152A5B;
 	color: white;
+
 }
