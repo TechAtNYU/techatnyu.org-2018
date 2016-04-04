@@ -50,16 +50,17 @@
 }
 .nav-list li:hover{
 	border-bottom: 4px solid $orange;
-	background:red;
 }
 .nav-list:last-child li{
 	background: $grey-color-light;
 }
 .sub {
-	position: relative;
+	position: absolute;
 }
 .nav-list, .sub {
 	height: 65px;
+	width: 35%;
+	left: 53%;
 }
 .nav-list li {
 	display:table-cell;
@@ -71,11 +72,6 @@
 .uniheader__meta {
 	width: 100%;
 	text-transform: uppercase;
-
-	.nav-list, .sub {
-		width: 35%;
-		left: 50%;
-	}
 	.nav-list {
 		position: absolute;
 	}
@@ -85,7 +81,7 @@
 	}
 	.nav-list:last-child {
 		top: 0;
-		left: 75%;
+		left: 78%;
 		width: 20%;
 	}
 	.nav-list li {
@@ -111,7 +107,7 @@
 	border-radius: 0;
 	position: relative;
 	width: 25%;
-	left: 20%;
+	left: 54%;
 }
 .uniheader__newslettersub:focus {
 	outline: none;
@@ -153,8 +149,16 @@
 /** footer **/
 .unifooter__main {
 	position: relative;
-	top: 60px;
+	top: 80px;
+	overflow: none;
 	background-color: #152A5B;
 	color: white;
-
+	.nav-list {
+		width:25%;
+		left: 0;
+	}
+	.sub {
+		top: 0;
+		left: 50%;
+	}
 }
