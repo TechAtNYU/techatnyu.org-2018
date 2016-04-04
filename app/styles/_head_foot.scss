@@ -1,5 +1,5 @@
 
-
+/** header **/
 .uniheader__wrapper {
 	position: fixed;
 	z-index: 10;
@@ -10,7 +10,6 @@
 .uniheader__primary { 
 	background-color: white;
 	vertical-align: middle;
-	border-bottom: 2px solid #65408B;
 	overflow: hidden;
 	height: 65px;
 }
@@ -42,82 +41,80 @@
 }
 
 /* right side */
+.nav {
+	display:table;
+}
+.nav li > a {
+	color: black;
+}
+.nav li:hover{
+	border-bottom: 4px solid $orange;
+	background:red;
+}
+.nav:last-child li{
+	background: $grey-color-light;
+}
+.sub {
+	position: relative;
+}
+.nav, .sub {
+	height: 65px;
+}
+.nav li {
+	display:table-cell;
+	padding: 0 20px;
+	height: inherit;
+	vertical-align: middle;
+}
+
 .uniheader__meta {
 	width: 100%;
 	text-transform: uppercase;
 	.sub {
-		left: 35%;
-		position: relative;
-	}
-	.nav, .sub {
-		height: 65px;
+		width: 35%;
+		left: 50%;
 	}
 	.nav {
-		display:inline-block;
 		position: absolute;
 	}
 	.nav:first-child {
 		width: 35%;
+		left: 10%;
 	}
-	.nav:last-child{
-		left: 73%;
+	.nav:last-child {
+		top: 0;
+		left: 75%;
 	}
 	.nav li {
-		display:inline-block;
 		height: inherit;
 	}
 }
-.rsvp-header__button {
-	border: 2px solid #65408b;
-	background: transparent;
-	color: #65408b;
-	position: relative;
-	top: -18px;
-	transition: all 0.5s;
-	margin-right: 1em;
-	/*box-shadow: 0 2px 0 black;*/
-}
-.rsvp-header__button:hover {
-	background-color: white;
+.newsletter__subscribe, .uniheader__newslettersub {
+	height: 65px;
+	text-transform: uppercase;
 }
 .uniheader__newslettersub {
 	background-color: $secondary-grey;
 	border: none;
 	padding: 0 12px;
 	font-size: 14px;
-	width: 35%;
-	color: white;
+	position: absolute;
+	left: 0;
+	width: 50%;
 }
-.newsletter__subscribe, .uniheader__newslettersub {
-	height: 65px;
-	text-transform: uppercase;
-}
+
 .newsletter__subscribe {
 	border: none;
 	font-size: 1em;
 	border-radius: 0;
-	margin-left: -0.5em;
+	position: relative;
+	width: 25%;
+	left: 20%;
 }
 .uniheader__newslettersub:focus {
 	outline: none;
 }
-.nav:last-child li{
-	background: $grey-color-light;
-}
-.sub {
-	width: 60%;
-
-}
-.nav, .sub {
-	height: 65px;
-	display: inline-block;
-}
-.nav li {
-	display:inline-block;
-	padding: 0 20px;
-	height: inherit;
-}
-
+/** org chart **/
 .orgchart {
 	background-color: #65408B;
 	border-bottom: 2px solid #d7552d;
@@ -137,15 +134,21 @@
 	cursor: pointer;
 	border-radius: 2px;
 }
-.orgchart-tag--co {
-}
 
-/* ~*~*~*~*~*~*~*~*~*~*~*~
-tech@NYU permanav - universal footer
-version 1.0.0 * https://github.com/TechAtNYU/permanav
-- - -
-colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/colors
-~*~*~*~*~*~*~*~*~*~*~*~ */
+.rsvp-header__button:hover {
+	background-color: white;
+}
+.rsvp-header__button {
+	border: 2px solid #65408b;
+	background: transparent;
+	color: #65408b;
+	position: relative;
+	top: -18px;
+	transition: all 0.5s;
+	margin-right: 1em;
+	/*box-shadow: 0 2px 0 black;*/
+}
+/** footer **/
 .unifooter__main {
 	position: relative;
 	top: 60px;

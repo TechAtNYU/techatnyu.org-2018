@@ -24,6 +24,7 @@ $secondary-grey:   #828282;
 $grey-color-light: lighten($secondary-grey, 40%);
 $grey-color-dark:  darken($secondary-grey, 25%);
 $orange: #D7552D;
+$purple: #65408B;
 
 // Width of the content area
 $content-width:    800px;
@@ -65,7 +66,7 @@ $on-laptop:        800px;
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to bottom right,$orange,$orange);
+    background-image: linear-gradient(to bottom right,$purple,$purple);
     opacity: .6; 
   }
   p {
