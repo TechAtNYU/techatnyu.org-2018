@@ -10,6 +10,7 @@
 .uniheader__primary { 
 	background-color: white;
 	vertical-align: middle;
+	border-bottom: 2px solid #65408B;
 	overflow: hidden;
 	height: 65px;
 }
@@ -30,7 +31,7 @@
 	display: inline-block;
 }
 .uh__secondary-trigger {
-	text-decoration: none
+	text-decoration: none;
 }
 
 /* left side */
@@ -41,26 +42,26 @@
 }
 
 /* right side */
-.nav {
+.nav-list {
 	display:table;
 }
-.nav li > a {
+.nav-list li > a {
 	color: black;
 }
-.nav li:hover{
+.nav-list li:hover{
 	border-bottom: 4px solid $orange;
 	background:red;
 }
-.nav:last-child li{
+.nav-list:last-child li{
 	background: $grey-color-light;
 }
 .sub {
 	position: relative;
 }
-.nav, .sub {
+.nav-list, .sub {
 	height: 65px;
 }
-.nav li {
+.nav-list li {
 	display:table-cell;
 	padding: 0 20px;
 	height: inherit;
@@ -70,39 +71,40 @@
 .uniheader__meta {
 	width: 100%;
 	text-transform: uppercase;
-	.sub {
+
+	.nav-list, .sub {
 		width: 35%;
 		left: 50%;
 	}
-	.nav {
+	.nav-list {
 		position: absolute;
 	}
-	.nav:first-child {
+	.nav-list:first-child {
 		width: 35%;
 		left: 10%;
 	}
-	.nav:last-child {
+	.nav-list:last-child {
 		top: 0;
 		left: 75%;
+		width: 20%;
 	}
-	.nav li {
+	.nav-list li {
 		height: inherit;
 	}
-}
-.newsletter__subscribe, .uniheader__newslettersub {
-	height: 65px;
-	text-transform: uppercase;
 }
 .uniheader__newslettersub {
 	background-color: $secondary-grey;
 	border: none;
 	padding: 0 12px;
 	font-size: 14px;
+}
+.newsletter__subscribe, .uniheader__newslettersub {
+	height: 65px;
+	text-transform: uppercase;
 	position: absolute;
 	left: 0;
 	width: 50%;
 }
-
 .newsletter__subscribe {
 	border: none;
 	font-size: 1em;
