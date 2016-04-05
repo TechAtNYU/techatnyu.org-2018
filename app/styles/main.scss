@@ -26,6 +26,7 @@ $grey-color-dark:  darken($secondary-grey, 25%);
 $orange: #D7552D;
 $purple: #65408B;
 $blue: #152A5B;
+$green: #19A447;
 // Width of the content area
 $content-width:    800px;
 
@@ -126,32 +127,41 @@ input[type="text"], input[type="email"], input[type="submit"], button {
   }
 }
 .about-short {
-  height: 80vh;
   background: white;
   position: relative;
-  h2 {
+  h3 {
     font-size: 3em;
-    line-height: 1;
   }
-  .short-description div:not(.image) {
-      float:left;
-      max-width: 400px;
-      p {
-        font-size: 20px;
-      }
-      a {
-        display: inline-block;
-      }
-      p, a {
-        margin-top: 40px;
-      }
-  }
+}
 
+.image {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+}
+.short-description {
+  margin: 0;
+}
+.short-description, .initiatives  {
+    float:left;
+    p, h3 {
+      max-width: 500px;
+    }
+    p {
+      font-size: 18px;
+    }
+    > a {
+      display: inline-block;
+    }
+    > p, a {
+        margin-top: 25px;
+    }
 }
 .arrow-nav {
     position: absolute;
-    left: 60%;
-    top: 50%;
+    left: 80%;
+    top: 75%;
     img {
         padding: 15px;
         background-color: $purple;
@@ -159,10 +169,27 @@ input[type="text"], input[type="email"], input[type="submit"], button {
         margin: 0;
     }
 }
-.hidden {
-  display: none;
+.initiatives {
+  width: inherit;
+  h3 {
+     font-size: 2.5em;
+     text-align: left;
+  }
+  ul, li > p a, p > a  {
+      margin: 0;
+  }
+  ul {
+      display:flex;
+      flex-direction: row;
+      li {
+        background: $green;
+      }
+      h4, li > p, a {
+          padding: 10px 5px;
+      }
+     
+  }
 }
-
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)

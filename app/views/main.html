@@ -1,54 +1,68 @@
 <section class="intro"></section>
-<section class="about-short">
-	<div class="short-description">
-		<div>
-			<h2>Who we are.</h2>
-			<p>We are NYC’s largest student-run organization of hackers, designers & builders. We host events that unite students and help them make stuff. We have 5 different initiatives that plan events.</p>
-			<a href="/#/about">Find out more.</a>
-		</div>
-		<div class="image"> 
-			<img src="images/1.JPG"/>
-		</div>
+<section ng-controller="MainCtrl as section" class="about-short">
+	<div ng-show="section.isSet(1)" class="short-description">
+		<h3>Who we are.</h3>
+		<p>We are NYC’s largest student-run organization of hackers, designers & builders. We host events that unite students and help them make stuff. We have 5 different initiatives that plan events.</p>
+		<a href="/about">Find out more.</a>
+		<img class="image" src="images/1.JPG"/>
 	</div>
 	<div class="arrow-nav">
-		<img src="images/icons/arrows-left.png">
-		<img src="images/icons/arrows-right.png">
+		<img ng-click="section.setSection(0)"src="images/icons/arrows-left.png">
+		<img ng-click="section.setSection(1)" src="images/icons/arrows-right.png">
 	</div>
-	<ul class="hidden">
-		<li class="event-initiatives">
+	<ul>
+		<li ng-show="section.isSet(2)" class="initiatives">
 			<h3>Get Started with the Tech Scene</h3>
 			<h4>Freshman Circuit</h4>
 			<p>Attend tech@nyu events and tour NYC startups with a small community of other freshmen. You'll get to meet startup employees to learn what they’re up to and where you might fit in. We’ve previously toured Kickstarter, eBay, The New York Times, Foursquare, Microsoft, Betaworks, and others.</p>
-			<span>Click to Apply!</span>
+			<a href="">Click to Apply!</a>
+			<img class="image" src="images/1.JPG"/>
 		</li>
-		<li class="event-initiatives">
+		<li ng-show="section.isSet(3)" class="initiatives">
 			<h3>Improve Your Skills</h3>
+			<p> We have a <a href="learn.techatnyu.org">learning platform</a> with tutorials created just for you, curated by us. Also, check out <a href="http://ship.techatnyu.org/">what we've made.</a></p>
 			<ul>
 				<li><h4>Hack Days</h4>
 					<p>Lectures on web technologies, covering everything from Angular to Zepto.</p>
+					<a href="">Check out the meetup!</a>
 				</li>
 				<li><h4>Design Days</h4>
 					<p>Workshops on design thinking, user research, and advanced topics in digital product design (e.g. designing for mobile).</p>
+					<a href="">Check out the meetup!</a>
+				</li>
+				<li><h4>Game Days</h4>
+					<p>Workshops on design thinking, user research, and advanced topics in digital product design (e.g. designing for mobile).</p>
+					<a href="">Check out the meetup!</a>
 				</li>
 			</ul>
 		</li>
-		<li class="event-initiatives">
+		<li ng-show="section.isSet(4)" class="initiatives">
 			<h3>Build & Socialize with Cool People</h3>
 			<h4>After Hours</h4>
 			<p>Designers, developers, and makers of all sorts coming together to hang out, work on their projects and get to know each other. All experience levels welcome!</p>
+			<img class="image" src="images/1.JPG"/>
 		</li>
 
-		<li class="event-initiatives">Follow the Latest in Tech
+		<li ng-show="section.isSet(5)" class="initiatives">
+			<h3>Follow the Latest in Tech</h3>
 			<ul>
-				<li>
-					<h4>Startup Week</h4>
-					<p>A weeklong conference with technical, design, and entrepreneurship worskshops and talks—all capped by a hackathon. We bring in the best and brightest to share their skills and stories. Past speakers include Josh Kushner of Oscar, Dennis Crowley of Foursquare, David Karp of Tumblr, Scott Heiferman of Meetup, David Tisch of Box Group, and Chris Dixon of Andreessen Horowitz.</p>
+				<li><h4>Startup Week</h4>
+					<p>A weeklong conference with technical, design, and entrepreneurship worskshops and talks. We bring in the best and brightest to share their skills and stories. Past speakers include Josh Kushner of Oscar, Dennis Crowley of Foursquare, David Karp of Tumblr, Scott Heiferman of Meetup, David Tisch of Box Group, and Chris Dixon of Andreessen Horowitz.</p>
+					<a href="http://nyusw.com/">Check out the latest SW site.</a>
 				</li>
-				<li>
-					<h4>Demo Days</h4>
+				<li><h4>Demo Days</h4>
 					<p>Students from all over NYC show off hacks or projects they’ve been working on. Demo your work, get inspired, or meet other students doing incredible things. We’ve hosted events at Tumblr, Microsoft, Stack Exchange, Spotify, and more.</p>
+					<a href="http://demodays.co/">Check out the latest DemoDays site.</a>
 				</li>
 			</ul>
+		</li>
+		<li ng-show="section.isSet(6)" class="initiatives">
+			<h3>Get a Job</h3>
+			<p> We have access to companies bla bla bla...Have a look at our <a href="http://jobs.techatnyu.org/">Job Board</a> and/or <a href="https://balloon.io/techatnyuresumedrop">drop your resume!</a></p>
+			<h4>Career Fair</h4>
+			<p>A weeklong conference with technical, design, and entrepreneurship worskshops and talks. We bring in the best and brightest to share their skills and stories. Past speakers include Josh Kushner of Oscar, Dennis Crowley of Foursquare, David Karp of Tumblr, Scott Heiferman of Meetup, David Tisch of Box Group, and Chris Dixon of Andreessen Horowitz. Our most recent SW was: nyusw.com</p>
+			<img class="image" src="images/1.JPG"/>
+			<a href="http://fair.nyusw.com/">Latest Career Fair site.</a>
 		</li>
 	</ul>
 </section>
