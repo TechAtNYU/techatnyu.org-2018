@@ -12,7 +12,7 @@ angular
   .module('techatnyuorgApp', [
     'ngAria',
     'ngRoute',
-    'ngSanitize'
+    'ngSanitize', 'tien.clndr'
   ])
   .config(function ($routeProvider) {
     $routeProvider

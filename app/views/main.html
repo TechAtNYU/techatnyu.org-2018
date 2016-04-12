@@ -2,7 +2,8 @@
 <section ng-controller="MainCtrl as section" class="about-short">
 	<div ng-show="section.isSet(1)" class="short-description">
 		<h3>Who we are.</h3>
-		<p>We are NYC’s largest student-run organization of hackers, designers & builders. We host events that unite students and help them make stuff. We have 5 different initiatives that plan events.</p>
+		<p>We are NYC’s largest student-run organization of hackers, designers & builders. We host events that unite students and help them make stuff. Take a look at our <a href="">calendar</a> for past and future events.</p>
+		
 		<a href="/about">Find out more.</a>
 		<img class="image" src="images/1.JPG"/>
 	</div>
@@ -10,7 +11,7 @@
 		<img ng-click="section.setSection(0)"src="images/icons/arrows-left.png">
 		<img ng-click="section.setSection(1)" src="images/icons/arrows-right.png">
 	</div>
-	<ul>
+	<ul class="initiatives-list">
 		<li ng-show="section.isSet(2)" class="initiatives">
 			<h3>Get Started with the Tech Scene</h3>
 			<h4>Freshman Circuit</h4>
@@ -20,7 +21,7 @@
 		</li>
 		<li ng-show="section.isSet(3)" class="initiatives">
 			<h3>Improve Your Skills</h3>
-			<p> We have a <a href="learn.techatnyu.org">learning platform</a> with tutorials created just for you, curated by us. Also, check out <a href="http://ship.techatnyu.org/">what we've made.</a></p>
+			<p> We have a <a href="learn.techatnyu.org">learning platform</a> with tutorials created just for you, curated by us. Also, check out <a href="http://ship.techatnyu.org/">what we've made</a> and take a look at our <a href="/events">calendar</a> for future events.</p>
 			<ul>
 				<li><h4>Hack Days</h4>
 					<p>Lectures on web technologies, covering everything from Angular to Zepto.</p>

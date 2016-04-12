@@ -19,7 +19,6 @@ body {
     line-height: $base-line-height;
     font-weight: 300;
     color: $text-color;
-    background-color: $grey-color;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -62,17 +61,22 @@ figcaption {
 /**
  * Lists
  */
-ul, ol {
+
+ul, li > p a, p > a  {
+  margin: 0;
+}
+ul:not(.initiatives-list), ol {
     margin-left: $spacing-unit;
 }
 
 li{
-        list-style: none;
+    list-style: none;
     > ul,
     > ol {
          margin-bottom: 0;
     }
 }
+
 
 /**
  * Headings
@@ -82,7 +86,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $head-font;
     line-height: 1;
 }
-
+h3 {
+    font-size: 2.5em;
+    text-align: left;
+}
 
 
 /**
@@ -108,8 +115,8 @@ a {
 **/
 p {
     max-width: 650px;
+    font-size: 18px;
 }
-
 /**
  * Blockquotes
  */
@@ -190,7 +197,23 @@ pre {
         clear: both;
     }
 }
-
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+* html .clearfix {
+  height: 1%;
+}
 
 
 /**

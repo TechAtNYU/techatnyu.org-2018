@@ -3,36 +3,7 @@
 ---
 @charset "utf-8";
 */
-
-
-// Our variables
-$head-font: "ff-meta-web-pro";
-$body-font: "Inconsolata", sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #EEEEEE;
-$secondary-grey:   #828282;
-$grey-color-light: lighten($secondary-grey, 40%);
-$grey-color-dark:  darken($secondary-grey, 25%);
-$orange: #D7552D;
-$purple: #65408B;
-$blue: #152A5B;
-$green: #19A447;
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
+@import "variables";
 
 
 // Using media queries with like this:
@@ -42,23 +13,24 @@ $on-laptop:        800px;
 //         padding-left: $spacing-unit / 2;
 //     }
 // }
+
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
     }
 }
+
 * {
   margin: 0;
   padding: 0;
 }
 
-section *:not(.orgchart-tag) {
+section *:not(.initiatives-list) {
   margin: 40px 40px 0 40px;
 }
 section:not(.intro) {
   padding: 15px;
 }
-
 
 .universal-section__reset {
   clear: both;
@@ -100,7 +72,7 @@ input[type="text"], input[type="email"], input[type="submit"], button {
   transition: all 0.5s;
 }
 .universal__button:hover {
-  background-color: #d7552d;
+  background-color: $orange;
   cursor: pointer;
 }
 .intro {
@@ -134,29 +106,11 @@ input[type="text"], input[type="email"], input[type="submit"], button {
   }
 }
 
-.image {
+.image, .side {
   display: block;
   position: absolute;
-  left: 50%;
+  left: 40%;
   top: 10%;
-}
-.short-description {
-  margin: 0;
-}
-.short-description, .initiatives  {
-    float:left;
-    p, h3 {
-      max-width: 500px;
-    }
-    p {
-      font-size: 18px;
-    }
-    > a {
-      display: inline-block;
-    }
-    > p, a {
-        margin-top: 25px;
-    }
 }
 .arrow-nav {
     position: absolute;
@@ -171,31 +125,86 @@ input[type="text"], input[type="email"], input[type="submit"], button {
 }
 .initiatives {
   width: inherit;
-  h3 {
-     font-size: 2.5em;
-     text-align: left;
-  }
-  ul, li > p a, p > a  {
-      margin: 0;
-  }
   ul {
       display:flex;
       flex-direction: row;
       li {
         background: $green;
       }
-      h4, li > p, a {
-          padding: 10px 5px;
-      }
-     
   }
 }
+.short-description, .initiatives  {
+    float:left;
+    p, h3 {
+      max-width: 500px;
+    }
+    ul, li > p a, p > a  {
+      margin: 0;
+    }
+    a {
+      display: inline-block;
+      margin-top: 25px;
+    }
+  
+}
 
+/** about page **/
+
+.about {
+   ul li {
+     margin: 10px;
+   }
+}
+.about {
+  position: relative;
+  top: 40px;
+  p {
+    width: 30%;
+  }
+}
+.about:nth-child(even) {
+  background: white;
+}
+.about:nth-child(odd) {
+  background: $grey-color;
+}
+
+/** team **/
+
+.team {
+   p {
+    float: left;
+  }
+}
+/*
+.team-images {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  width: 70%;
+  left: 35%;
+}*/
+/** org chart **/
+.orgchart__tags {
+  max-width: 450px;
+}
+.orgchart__tags li {
+  display: inline-block;
+  list-style: none;
+}
+.orgchart-tag {
+  border: 2px solid black;
+  padding: 4px 8px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  border-radius: 2px;
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
         "syntax-highlighting",
-        "_head_foot"
+        "_head_foot",
+        "cal"
 ;

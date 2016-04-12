@@ -1,2 +1,26 @@
-<div events>
+<div class="calendar clearfix">
+	<tien-clndr class="clndr cal1" tien-clndr-object="clndr" tien-clndr-events="events">
+	  <div class="clndr-controls">
+	    <div class="clndr-previous-button left-align" ng-click="clndr.back()">Previous</div>
+	    <div class="clndr-next-button right-align" ng-click="clndr.forward()">Next</div>
+	    <h2 class="month">{{month}} {{year}}</h2>
+	  </div>
+	  <div class="clndr-grid">
+	    <div class="days-of-the-week">
+	      <div class="header-day" ng-repeat="day in daysOfTheWeek track by $index">
+	        {{day}}
+	      </div>
+	    </div>
+	    <div class="days">
+	      <div class="{{day.classes}}" ng-repeat="day in days">
+	        <div class="event-indicator" ng-show="day.events.length" ng-click="showEvents(day.events)">{{day.events.length}}</div>
+	        {{day.day}}
+	      </div>
+	    </div>
+	  </div>
+	  <div class="event-listing">
+          <h4 class="event-listing-title">Events this month</h4>
+          <div class="sort-options"><span class="sortByPast">Past</span> | <span class="sortByUpcoming active">Upcoming</span> </div>
+      </div>
+	</tien-clndr>
 </div>

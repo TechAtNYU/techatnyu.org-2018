@@ -112,26 +112,6 @@
 .uniheader__newslettersub:focus {
 	outline: none;
 }
-/** org chart **/
-.orgchart {
-	background-color: #65408B;
-	border-bottom: 2px solid #d7552d;
-	overflow: auto; /* jank clearfix */
-	padding: 12px 0;
-	position: relative;
-	top: 80px;
-}
-.orgchart__tags li {
-	display: inline-block;
-	list-style: none;
-}
-.orgchart-tag {
-	border: 2px solid black;
-	padding: 4px 8px;
-	margin-bottom: 6px;
-	cursor: pointer;
-	border-radius: 2px;
-}
 
 .rsvp-header__button:hover {
 	background-color: white;
