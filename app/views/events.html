@@ -1,5 +1,5 @@
 <div class="calendar clearfix">
-	<tien-clndr class="clndr cal1" tien-clndr-object="clndr" tien-clndr-events="events">
+	<tien-clndr class="clndr cal1" tien-clndr-object="clndr" tien-clndr-events="events" tien-clndr-options="options">
 	  <div class="clndr-controls">
 	    <div class="clndr-previous-button left-align" ng-click="clndr.back()">Previous</div>
 	    <div class="clndr-next-button right-align" ng-click="clndr.forward()">Next</div>
@@ -12,15 +12,19 @@
 	      </div>
 	    </div>
 	    <div class="days">
-	      <div class="{{day.classes}}" ng-repeat="day in days">
-	        <div class="event-indicator" ng-show="day.events.length" ng-click="showEvents(day.events)">{{day.events.length}}</div>
-	        {{day.day}}
+	      <div class="{{day.classes}}" ng-repeat="day in days" ng-click="showEvents(day.events)">
+	        <span class="day-number">{{day.day}}</span>
 	      </div>
 	    </div>
 	  </div>
 	  <div class="event-listing">
           <h4 class="event-listing-title">Events this month</h4>
-          <div class="sort-options"><span class="sortByPast">Past</span> | <span class="sortByUpcoming active">Upcoming</span> </div>
+          <!--<div class="sort-options"><span class="sortByPast">Past</span> | <span class="sortByUpcoming active">Upcoming</span> </div>-->
+          <div class="event-item" ng-repeat="event in events">
+            <a href="{{event.rsvpUrl}}"><div class="event-item-name">{{event.title}}</div></a>
+            <div class="event-item-description">{{event.description}}</div>
+            {{event.isInCurrentMonth}}
+         </div>
       </div>
 	</tien-clndr>
 </div>

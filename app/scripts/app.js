@@ -12,9 +12,11 @@ angular
   .module('techatnyuorgApp', [
     'ngAria',
     'ngRoute',
-    'ngSanitize', 'tien.clndr'
+    'ngSanitize', 
+    'tien.clndr', 
+    'restangular'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, RestangularProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -32,5 +34,15 @@ angular
       })
       .otherwise({
         redirectTo: '/'
+      });
+
+      RestangularProvider.setBaseUrl('https://api.tnyu.org/v3');
+      // Configuring Restangular to work with JSONAPI spec
+      RestangularProvider.setDefaultHeaders({
+      'Accept': 'application/vnd.api+json, application/*, */*',
+      'Content-Type': 'application/vnd.api+json; ext=bulk'
+      });
+      RestangularProvider.addResponseInterceptor(function(data) {
+        return data;
       });
   });
