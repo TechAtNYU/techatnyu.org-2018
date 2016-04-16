@@ -30,6 +30,8 @@ module.exports = function(config) {
       'bower_components/moment/moment.js',
       'bower_components/clndr/clndr.min.js',
       'bower_components/angular-clndr/angular-clndr.js',
+      'bower_components/lodash/lodash.js',
+      'bower_components/restangular/dist/restangular.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

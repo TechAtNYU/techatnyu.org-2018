@@ -9,5 +9,8 @@
  */
 angular.module('techatnyuorgApp')
   .controller('AboutCtrl', function ($scope) {
-  	
+  	//get all members of team
+  	//get press
+  	//get links to email
+  	//add sponsors
   });

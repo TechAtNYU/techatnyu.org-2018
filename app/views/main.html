@@ -5,6 +5,12 @@
 		<p>We are NYC’s largest student-run organization of hackers, designers & builders. We host events that unite students and help them make stuff. Take a look at our <a href="">calendar</a> for past and future events.</p>
 		
 		<a href="/about">Find out more.</a>
+		<div class="latest" ng-show="nextEvent != null"> 
+			<h4> Latest event</h4>
+			<h5><a href="{{nextEvent.rsvpUrl}}">{{nextEvent.title}}</a></h5>
+			<p>{{nextEvent.description}}
+			<button class="universal__button">RSVP</button>
+		</div>
 		<img class="image" src="images/1.JPG"/>
 	</div>
 	<div class="arrow-nav">

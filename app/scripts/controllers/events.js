@@ -29,6 +29,7 @@ angular.module('techatnyuorgApp')
   		 	}
   		 }
    	 };
+
    	 /*
   	function isInPast(eventDate) {
 		if (eventDate.isAfter(now)) {
