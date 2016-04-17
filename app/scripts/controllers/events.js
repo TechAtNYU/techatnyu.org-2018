@@ -11,16 +11,18 @@ angular.module('techatnyuorgApp')
   .controller('EventsCtrl', function ($scope, Restangular) {
   	var events;
   	var now = moment();
-  	$scope.currentMonth = now.get("month");
-  	$scope.currentYear = now.get("year");
+  	var currentMonth = now.get('month');
+  	var currentYear = now.get('year');
+  	$scope.calMonth = now.get('month');
+  	$scope.calYear = now.get('year');
    	$scope.$watch('clndr.month', function() {
    		var calMonth = $scope.clndr.month.get('month');
    		var calYear = $scope.clndr.month.get('year');
    		if (typeof calMonth !== 'undefined') {
-        	$scope.currentMonth = $scope.clndr.month.get('month');
+        	$scope.calMonth = $scope.clndr.month.get('month');
     	}
     	if (typeof calYear !== 'undefined') {
-        	$scope.currentYear = $scope.clndr.month.get('year');
+        	$scope.calYear = $scope.clndr.month.get('year');
     	}
     });
  	function urlify(text) {
@@ -37,6 +39,7 @@ angular.module('techatnyuorgApp')
 	  	this.year = timeDetails.get("year");
 	  	this.description = description;
 	  	this.title = title;
+	  	this.isPast = isInPast(moment(start));
 	  	rsvpUrl ? this.rsvpUrl = rsvpUrl : this.rsvpUrl = "http://rsvp.techatnyu.org/";
 	}
   	function populateCalendar() {
@@ -50,6 +53,14 @@ angular.module('techatnyuorgApp')
 	  		}	
 	  		$scope.events.push(new SimpleEvent(currentAttr.startDateTime, currentAttr.endDateTime, currentAttr.title, description, currentAttr.rsvpUrl));
 		}
+	}
+	function isInPast(eventDate) {
+		if (eventDate.isAfter(now)) {
+		    return false;
+		}
+		else {
+	    	return true;
+	 	}
 	}
   	Restangular.one('events/?page%5Blimit%5D=10&sort=%2bstartDateTime')
  	.get()
@@ -67,12 +78,14 @@ angular.module('techatnyuorgApp')
         console.log(events);
     };
     $scope.isInCurrentMonth = function(event) {
-    	if (event.month === $scope.currentMonth && event.year === $scope.currentYear) {
+    	if (event.month === $scope.calMonth && event.year === $scope.calYear) {
     		return true;
     	}
     	else {
     		return false;
     	}
-    
+    };
+    $scope.calInPresent = function() {
+    	return ($scope.calMonth === currentMonth && currentYear === $scope.calYear);
     };
 });

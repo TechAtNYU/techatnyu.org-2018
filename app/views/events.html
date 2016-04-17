@@ -19,8 +19,12 @@
 	  </div>
 	  <div class="event-listing">
           <h4 class="event-listing-title">Events this month</h4>
-          <!--<div class="sort-options"><span class="sortByPast">Past</span> | <span class="sortByUpcoming active">Upcoming</span> </div>-->
-          <div class="event-item" ng-repeat="event in events" ng-if="isInCurrentMonth(event)">
+          <div ng-show="calInPresent()" class="sort-options"><span ng-click="showPast=true">Past</span> | <span ng-click="showPast=false">Upcoming</span> </div>
+          <div ng-hide="showPast" class="event-item" ng-repeat="event in (futureEvents = (events | filter: { isPast: false}))" ng-if="isInCurrentMonth(event)">
+            <a href="{{event.rsvpUrl}}"><div class="event-item-name">{{event.title}}</div></a>
+            <div class="event-item-description">{{event.description}}</div>
+         </div>
+         <div class="event-item" ng-if="isInCurrentMonth(event)" ng-show="showPast || calInPresent() == false" ng-repeat="event in events | filter: { isPast: true}">
             <a href="{{event.rsvpUrl}}"><div class="event-item-name">{{event.title}}</div></a>
             <div class="event-item-description">{{event.description}}</div>
          </div>
