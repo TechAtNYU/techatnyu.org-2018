@@ -173,11 +173,7 @@ angular.module('techatnyuorgApp')
            console.log(people);
     	})
 	    .catch(function(error){
-	        console.log(error);
+	        //console.log(error);
     });
   	
-  	//get all members of team
-  	//get press
-  	//get links to email
-  	//add sponsors
   });

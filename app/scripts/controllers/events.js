@@ -13,40 +13,16 @@ angular.module('techatnyuorgApp')
   	var now = moment();
   	$scope.currentMonth = now.get("month");
   	$scope.currentYear = now.get("year");
-
-  	 $scope.options = {
-  		clickEvents: {
-  			click: function(target) {
-		  	 	console.log(target);
-		  	 },
-  		 	onMonthChange: function (month) {
-  		 		console.log('changed month');
-  		 		$scope.currentMonth = month;
-  		 	},
-  		 	onYearChange: function (year) {
-  		 		console.log('changed year');
-  		 		$scope.currentYear = year;
-  		 	}
-  		 }
-   	 };
-
-   	 /*
-  	function isInPast(eventDate) {
-		if (eventDate.isAfter(now)) {
-		    return false;
-		}
-		else {
-			return true;
-		}
-	}
-	function isInCurrentMonth(eventDate) {
-	 	if (eventDate.get("month") === now.get("month") && eventDate.get("year") === now.get("year")) {
-	 		return true;
-	 	}
-	 	else {
-	 		return false;
-	 	}
-	 }*/
+   	$scope.$watch('clndr.month', function() {
+   		var calMonth = $scope.clndr.month.get('month');
+   		var calYear = $scope.clndr.month.get('year');
+   		if (typeof calMonth !== 'undefined') {
+        	$scope.currentMonth = $scope.clndr.month.get('month');
+    	}
+    	if (typeof calYear !== 'undefined') {
+        	$scope.currentYear = $scope.clndr.month.get('year');
+    	}
+    });
  	function urlify(text) {
 	    var urlRegex = /(https?:\/\/[^\s]+)/g;
 	    return text.replace(urlRegex, function(url) {
@@ -59,8 +35,6 @@ angular.module('techatnyuorgApp')
 	  	this.date = timeDetails.format("YYYY-MM-DD");
 	  	this.month = timeDetails.get("month");
 	  	this.year = timeDetails.get("year");
-	  	//this.isPast = isInPast(timeDetails);
-	  	//this.isInCurrentMonth = isInCurrentMonth(timeDetails );
 	  	this.description = description;
 	  	this.title = title;
 	  	rsvpUrl ? this.rsvpUrl = rsvpUrl : this.rsvpUrl = "http://rsvp.techatnyu.org/";
@@ -87,12 +61,11 @@ angular.module('techatnyuorgApp')
 			return ((!isInternal) && status !== "draft");
 		 });
 		populateCalendar();
-		//setValues();
 	});
-	/* $scope.showEvents = function(events) {
+	$scope.showEvents = function(events) {
         //alert(events.map(function(e) { return e.title }).join("\n"));
         console.log(events);
-    };*/
+    };
     $scope.isInCurrentMonth = function(event) {
     	if (event.month === $scope.currentMonth && event.year === $scope.currentYear) {
     		return true;

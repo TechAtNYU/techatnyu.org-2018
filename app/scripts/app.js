@@ -15,7 +15,7 @@ angular
     'ngAria',
     'ngRoute',
     'ngSanitize', 
-    'tien.clndr', 
+    'tien.clndr',
     'restangular',
     'app.filters'
   ])
