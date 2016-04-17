@@ -9,6 +9,7 @@
  */
 angular.module('techatnyuorgApp')
   .controller('AboutCtrl', function ($scope, Restangular) {
+  	$scope.team = [];
   	$scope.supporters = [
 	  {
 	    name: 'Dev Bootcamp',
@@ -166,11 +167,25 @@ angular.module('techatnyuorgApp')
   			url: ''
   		}
   	];
-
-  	 Restangular.one('people/')
+  	 Restangular.one('memberships?include=member')
     .get()
-        .then(function(people) {
-           console.log(people);
+        .then(function(data) {
+        	console.log(data.data);
+          /* for (var i=0; i < data.included.length; i++) {
+           		console.log(data.included[i].attributes);
+           		/*var teamMember = data.included[i].attributes;
+           		console.log(teamMember);
+           		/*var contact;
+           		if (teamMember.contact) {
+           			contact = teamMember.contact.twitter ? 'https://www.twitter.com/' + teamMember.contact.twitter: 'https://www.linkedin.com' + teamMember.contact.linkedin;
+           		}	
+           		$scope.team.push({
+           			name: teamMember.name,
+           			img: teamMember.imgUrl,
+           			title: teamMember.title,
+           			contact: contact ? contact : ''
+           		})
+           };*/
     	})
 	    .catch(function(error){
 	        //console.log(error);
