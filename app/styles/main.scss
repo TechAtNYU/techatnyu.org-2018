@@ -170,35 +170,36 @@ input[type="text"], input[type="email"], input[type="submit"], button {
 }
 
 /** team **/
-
-.team {
-   p {
-    float: left;
-  }
-}
 /*
-.team-images {
+.grid {
+  text-align: justify;
+}
+.grid.posts li {
+  display: inline-block;
+  width: 31%;
+  margin-bottom: 2%;
+}
+.grid.posts li.half {
+  width: 45%;
+}
+.grid.eboard li {
+  display: inline-block;
+  width: 24%;
+}
+.grid:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+
+.grid {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   width: 70%;
   left: 35%;
 }*/
-/** org chart **/
-.orgchart__tags {
-  max-width: 450px;
-}
-.orgchart__tags li {
-  display: inline-block;
-  list-style: none;
-}
-.orgchart-tag {
-  border: 2px solid black;
-  padding: 4px 8px;
-  margin-bottom: 6px;
-  cursor: pointer;
-  border-radius: 2px;
-}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import

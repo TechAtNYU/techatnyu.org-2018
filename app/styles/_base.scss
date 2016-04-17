@@ -97,7 +97,7 @@ h3 {
  */
 a {
     text-decoration: none;
-    &:not(.nav-link) {
+    &:not(.nav-link):not(.universal__button) {
         color: $brand-color;
         &:visited {
         color: darken($brand-color, 15%);
@@ -107,8 +107,8 @@ a {
             text-decoration: underline;
         }
     }
- 
 }
+
 
 /** 
     Paragraphs
