@@ -16,14 +16,16 @@ angular.module('techatnyuorgApp')
   	$scope.calMonth = now.get('month');
   	$scope.calYear = now.get('year');
    	$scope.$watch('clndr.month', function() {
-   		var calMonth = $scope.clndr.month.get('month');
-   		var calYear = $scope.clndr.month.get('year');
-   		if (typeof calMonth !== 'undefined') {
-        	$scope.calMonth = $scope.clndr.month.get('month');
-    	}
-    	if (typeof calYear !== 'undefined') {
-        	$scope.calYear = $scope.clndr.month.get('year');
-    	}
+   		if ($scope.clndr) {
+	   		var calMonth = $scope.clndr.month.get('month');
+	   		var calYear = $scope.clndr.month.get('year');
+	   		if (typeof calMonth !== 'undefined') {
+	        	$scope.calMonth = $scope.clndr.month.get('month');
+	    	}
+	    	if (typeof calYear !== 'undefined') {
+	        	$scope.calYear = $scope.clndr.month.get('year');
+	    	}
+	    }
     });
  	function urlify(text) {
 	    var urlRegex = /(https?:\/\/[^\s]+)/g;
