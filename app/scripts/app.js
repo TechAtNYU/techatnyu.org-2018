@@ -8,15 +8,18 @@
  *
  * Main module of the application.
  */
+angular.module('app.services', ['restangular']);
+angular.module('app.controllers', ['app.services']);
 angular
   .module('techatnyuorgApp', [
     'ngAria',
     'ngRoute',
     'ngSanitize', 
     'tien.clndr', 
-    'restangular'
+    'restangular',
+    'app.filters'
   ])
-  .config(function ($routeProvider, RestangularProvider) {
+  .config(function ($routeProvider, $locationProvider, RestangularProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html'
@@ -33,6 +36,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+      $locationProvider.html5Mode(true);
 
       RestangularProvider.setBaseUrl('https://api.tnyu.org/v3');
       // Configuring Restangular to work with JSONAPI spec

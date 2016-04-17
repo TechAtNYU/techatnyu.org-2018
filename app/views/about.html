@@ -14,6 +14,11 @@
 		</ul>
 	</p>
 	<div class="side">
+		<div class="supporters">
+			<li ng-repeat="org in supporters">
+				<a href="{{org.url}}"><img alt="{{org.name}}" src="{{org.img}}"/></a>
+			</li>
+		</div>
 		<p>If you're a student in New York City that's interested in the intersection of startups, entrepreneurship, coding, art and design - we want you to join us. If you're an NYC startup looking to give back to the student community, we also want to find ways you can help.</p>
 		<a href="emailto:hello@techatnyu.org">hello@techatnyu.org</a>
 	</div>
@@ -21,66 +26,21 @@
 <section class="about team">
 	<h3>Team</h3>
 	<p>Tousled direct dollar it affogato pour-over banh chianormcore health pop-up shabby meditation etsy mlkshk heirloom direct migas gentrify jean sartorial pabst kinfolk beard crucifix. Chambray chianormcore narwhal bushwick dollar pork franzen beertrust before authentic yuccie axe scenester fund fashion. Meditation raw swag bottle disrupt locavore squid coffee lo-fi chic stumptown fap plaid pack mixtape goth heard. We're looking for new e-board members!</p>
-	<!--<div class="orgchart__primary">
-	  <h4>Initiatives</h4>
-	  <ul class="orgchart__tags">
-	    <li class="orgchart-tag orgchart-tag--ah">After Hours</li>
-	    <li class="orgchart-tag orgchart-tag--dd">DemoDays</li>
-	    <li class="orgchart-tag orgchart-tag--sw">Startup Week</li>
-	    <li class="orgchart-tag orgchart-tag--fc">Freshman Circuit</li>
-	    <li class="orgchart-tag orgchart-tag--hd">Hack Days</li>
-	    <li class="orgchart-tag orgchart-tag--de">Design Days</li>
-	    <li class="orgchart-tag orgchart-tag--gd">Game Days</li>
-	    <li class="orgchart-tag orgchart-tag--co">Community</li>
-	    <li class="orgchart-tag orgchart-tag--in">Infrastructure</li>
-	  </ul>
-	</div>
-	<div class="orgchart__secondary">
-	  <h4>Meta</h4>
-	  <ul class="orgchart__tags">
-	    <li class="orgchart-tag">President</li>
-	    <li class="orgchart-tag">Vice President</li>
-	    <li class="orgchart-tag">Chair</li>
-	    <li class="orgchart-tag">Treasurer</li>
-	    <li class="orgchart-tag">Creative Director</li>
-	    <li class="orgchart-tag">Marketing</li>
-	    <li class="orgchart-tag">Business Development</li>
-	  </ul>
-	</div>-->
 	<ul class="team-images side">
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
-		<li><img src="images/team/abhi-agarwal.jpg"></li>
+		<li ng-repeat="member in team">
+			<img src="{{member.img}}"/>
+			<h5>{{member.name}}<h5>
+			<a href="{{member.twitter}}">twitter</a>
+		</li>
 	</ul>
 	
 </section>
 <section class="about press">
 	<h3>Press </h3>
 		<ul>
-			<li>Entrepreneurs Should Stay in School | PandoDaily - October 4, 2012</li>
-			<li>Charlie O'Donnell and David Tisch Really Don't See the Point of Pivoting | Betabeat - October 4, 2012</li>
-			<li>Tech@NYU Hosts "Hacking as a Mentality" | NYU Arthur L. Carter Journalism Institute - October 3, 2012</li>
-			<li>Will You Create the Next Facebook at Startup Week? | NYU Local - October 1, 2012</li>
-			<li>NYU and Codecademy Partner to Teach Coding to Undergrads | Betabeat - September 24, 2012</li>
-			<li>Students Push for Tech Entrepreneur Lab at NYU | Betabeat - April 27, 2012</li>
-			<li>Tech@NYU DemoDays: Fostering Culture | NYU Entrepreneurs Network - December 3, 2011</li>
-			<li>Tech@NYU's First Ever DemoDays is Happening This Saturday | NYU Local - November 17, 2011</li>
-			<li>NYU Startup Week: Bigger, Faster, Awesomer | NYU Entrepreneurs Network - September 28, 2011</li>
-			<li>"NYU Startup Week," featuring Entrepreneurship and Innovation | NYU - April 5, 2011</li>
-			<li>Hone Your Tech Entrepreneurial Skills at NYU Startup Week Events | NYU Local - October 4, 2010</li>
-			<li>NYU Tech Geeks to Have Best Week Ever | NYU Local - March 31, 2010</li>
+			<li ng-repeat="article in press">
+				<a href="{{article.url}}">{{article.title}}</a>
+			</li>
 		</ul>
 </section>
 <section class="about">
