@@ -15,6 +15,7 @@ angular.module('techatnyuorgApp')
   	var currentYear = now.get('year');
   	$scope.calMonth = now.get('month');
   	$scope.calYear = now.get('year');
+  	console.log($scope);
    	$scope.$watch('clndr.month', function() {
    		if ($scope.clndr) {
 	   		var calMonth = $scope.clndr.month.get('month');
@@ -41,6 +42,7 @@ angular.module('techatnyuorgApp')
 	  	this.year = timeDetails.get("year");
 	  	this.description = description;
 	  	this.title = title;
+	  	this.state = 'inactive';
 	  	this.isPast = isInPast(moment(start));
 	  	rsvpUrl ? this.rsvpUrl = rsvpUrl : this.rsvpUrl = "http://rsvp.techatnyu.org/";
 	}
@@ -75,8 +77,14 @@ angular.module('techatnyuorgApp')
 		 });
 		populateCalendar();
 	});
-	$scope.showEvents = function(events) {
-        //alert(events.map(function(e) { return e.title }).join("\n"));
+	$scope.showEvents = function(events) {		
+        alert(events.map(function(e) { return e.title }).join("\n"));
+        events.forEach(function(e) {
+        	if (e.state !== 'active') {
+        		e.state = 'active';
+        	}
+        	
+        });
         console.log(events);
     };
     $scope.isInCurrentMonth = function(event) {

@@ -55,16 +55,18 @@
    border-bottom: 2px solid rgb(255, 255, 255);
 
  }
+.day:focus {
+  outline: none;
+}
 .day.past{
    opacity: 0.4;
 }
 .day.today {
  	background-color: white;
 }
-/*
 .day.event {
- 	border-bottom: 3px solid $orange!important;
-}*/
+ 	border-bottom: 2px solid $orange!important;
+}
 .month {
 	float: center;
 	padding-bottom: 15px;
@@ -100,9 +102,6 @@
 .event-item {
 	padding: 5px;
 	border-bottom: 1px solid black;
-}
-.event-item.isPasttrue.currentMonthtrue  {
-	display: none;
 }
 .sort-options {
 	text-align: center;
