@@ -1,0 +1,13 @@
+machine:
+  timezone:
+    America/Los_Angeles
+
+test:
+  override:
+    - echo "No tests are needed"
+
+deployment:
+  staging:
+    branch: v2-circle
+    commands:
+      - turbolift -u $RAXUSER -a $RAXAPIKEY --os-rax-auth $RAXREGION upload -s $HOME/$CIRCLE_PROJECT_REPONAME/app -c $CONTAINER;
