@@ -12,7 +12,7 @@ compile:
 
 deployment:
   staging:
-    branch: v2-circle
+    branch: v2
     commands:
       - turbolift -u $RAXUSER -a $RAXAPIKEY --os-rax-auth $RAXREGION upload -s $HOME/$CIRCLE_PROJECT_REPONAME/www -c $CONTAINER;
 
