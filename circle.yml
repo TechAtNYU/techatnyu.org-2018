@@ -5,10 +5,14 @@ machine:
 test:
   override:
     - echo "No tests are needed"
+    
+compile:
+  override:
+    - npm run compile
 
 deployment:
   staging:
     branch: v2-circle
     commands:
-      - turbolift -u $RAXUSER -a $RAXAPIKEY --os-rax-auth $RAXREGION upload -s $HOME/$CIRCLE_PROJECT_REPONAME/app -c $CONTAINER;
+      - turbolift -u $RAXUSER -a $RAXAPIKEY --os-rax-auth $RAXREGION upload -s $HOME/$CIRCLE_PROJECT_REPONAME/www -c $CONTAINER;
 
