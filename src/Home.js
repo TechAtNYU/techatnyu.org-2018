@@ -9,14 +9,24 @@ class EmailForm extends Component {
 		this.state = {
             value: "Enter your email"
 		};
+
+		this.handleChange = this.handleChange.bind(this);
 	}
-  	handleChange (evt) {
+
+  	handleChange(evt) {
+  		console.log(this);
 	    this.setState({
-	      value: evt.target.value
+	      value: evt.target.value // not defined
 	    });
 	}
+
 	submitChange (email) {
-		console.log(email);
+
+		let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		if (re.test(email)){
+			let url = "https://mailtrain.tnyu.org/subscription/ryeVfPjte?email="+ email + "&subscribe=Sign+Up";
+			window.open(url);
+		}
 	}
 	render () {
 		return(
@@ -46,7 +56,7 @@ class Home extends Component {
                 <div id="main-slider"><SimpleSlider team={this.state}/></div>
                 <div id="mobile-events"><MobileEvents/></div>
 
-			    <h2 id="tnyu-description"> We are NYC's largest student-run community <br/> of coders, designers, and builders. </h2>
+			    <h2 id="tnyu-description"> We are NYCs largest student-run community <br/> of coders, designers, and builders. </h2>
 			    <footer id= "footer">
 			    	<Constants.footer/>
 			    </footer>
