@@ -5,7 +5,9 @@ import React, {Component} from 'react';
 import Slider from 'react-slick';
 import Constants from './Constants';
 
+var date = new Date();
 const eventURL = 'https://api.tnyu.org/v3/events/upcoming-publicly-live?page%5Blimit%5D=15&sort=startDateTime?';
+const pastEvents = 'https://api.tnyu.org/v3/events/?sort=endDateTime'
 const placeholder = [
     {
         relationships: {
@@ -93,17 +95,20 @@ export class SimpleSlider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            events:[]
+            events:[],
+            pastEvents:[]
         };
     }
-    componentDidMount() {
+    
+
+    presentEvents() {
         fetch(eventURL, {
             method:'GET',
         })
             .then((response) => response.json())
             .then((responseData) => {
                 if (responseData.data.length === 0) {
-                    console.log("no upcoming events");
+                    //pastEvents();
                 }
                 else {
                     this.setState({
@@ -112,6 +117,12 @@ export class SimpleSlider extends Component {
                 }
             });
     }
+
+
+    componentDidMount() {
+        this.presentEvents(); 
+    }
+
     render () {
 
         let listEvents = [];
@@ -123,10 +134,19 @@ export class SimpleSlider extends Component {
                 numEvents += 1;
             }
         } else {
+
+            /*
+            for (let i = 0; i <  3; i++) {
+                listEvents.push(<div key={i}><Event event={} /></div>)
+            } 
+            */
+            
             for (let i = 0; i < placeholder.length; i++) { // add in placeholder events if there are no upcoming events
                 listEvents.push(<div key={numEvents}><Event event={placeholder[i]} /></div>);
                 numEvents += 1;
             }
+
+
         }
 
         // TODO: DELETE THIS

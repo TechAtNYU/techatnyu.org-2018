@@ -18,9 +18,9 @@ class JobsCard extends Component {
         return (
             <div className="jobs-card">
                 <div className="job-content" >
-                    <span className="job-title">{this.props.job.title}</span><br/>
-                    <span>{this.props.job.paid} | {this.props.job.salary} </span><br/><br/>
-                    <div>{this.props.job.description}</div>
+                    <span className="job-title">{this.props.title}</span><br/>
+                    <span>{this.props.salary} </span><br/><br/> // | {this.props.job.salary}
+                    <div>{this.props.description}</div>
                 </div>
                 <div className="job-apply">
                     <p> APPLY </p>
@@ -64,8 +64,37 @@ const placeholder = [{
     }];
 
 class Jobs extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            jobs: {}
+        }
+    }
+
+    getJobs(){
+        fetch('https://api.tnyu.org/v3/jobs', {
+            method: 'GET',
+        })
+        .then((response) => response.json())
+            .then((responseData) => {
+                if (responseData.data.length === 0) {
+                    //pastEvents();
+                }
+                else {
+                    this.setState({
+                        jobs: responseData.data
+                    });
+                } 
+            });
+    }
+
+    componentWillMount() {
+        this.getJobs();
+    }
 
     render() {
+        let availableJobs = this.state.jobs;
+        console.log(this.state.jobs);
         return (
             <div>
                 <img id="dots" src="/img/dots.png"/>
@@ -80,7 +109,7 @@ class Jobs extends Component{
                     </div>
                 </div>
                 <div id="jobs-container">
-                    {placeholder.map( (obj, index) => {
+                    {this.state.jobs.map( (obj, index) => {
                         return <JobsCard key={index} job={obj}/>
                     })}
                 </div>

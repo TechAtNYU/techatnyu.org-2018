@@ -96,19 +96,67 @@ const Teams = () => (
     </table>
 );
 
+function getInfo(id, array) {
+    let url = 'https://api.tnyu.org/v3/memberships/' + id + '?include=member,position';
+    let info = fetch(url, {
+        method: 'GET',
+    })
+        .then((response) => response.json())
+        .then((responseData) => {
+
+            let person = {             
+                "name": responseData.included[0].attributes.name
+            }
+            
+            if (Constants.teams[responseData.included[1].relationships.team.data.id] != null) {
+                person["role"] = Constants.teams[responseData.included[1].relationships.team.data.id];
+                person["link"] = responseData.included[1].attributes.contact;
+            }   
+            console.log(person);
+        })
+}
+    
+
 
 class Board extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            boardMembers: members['members']
+            boardMembers: []
         }
     }
+
+    
+    
+    getMembers() {
+        let array = [];
+        fetch('https://api.tnyu.org/v3/memberships', {
+            method:'GET',
+        })
+            .then((response) => response.json())
+            .then((responseData) => {
+                for (let i = 0; i < responseData.data.length; i++) {
+                    if (responseData.data[i].attributes.isActive) {
+                        
+                        let id = responseData.data[i].id;
+                        getInfo(id, array);
+                        
+                    }   
+                }
+            });
+        
+    }
+
+    componentDidMount() {
+        this.getMembers(this.state.boardMembers); 
+    }
+
+
     render() {
 
         let memberPairs = [];
-
+        console.log(this.state.boardMembers);
         // Pair members together to put them in the table
         for (let i = 0; i < this.state.boardMembers.length; i+=2) {
 

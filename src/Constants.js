@@ -9,7 +9,9 @@ const Constant = {
     medium: "https://medium.com/@TechatNYU",
     instagram: "https://www.instagram.com/techatnyu/",
     rsvp: "http://rsvp.techatnyu.org/",
-    resumes: "https://balloon.io/tnyuresumes"
+    calendar: "http://cal.techatnyu.org/",
+    resumes: "https://balloon.io/tnyuresumes",
+    membership: "https://api.tnyu.org/v3/memberships?people"
 };
 
 const TeamIDs  = {
