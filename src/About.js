@@ -96,26 +96,7 @@ const Teams = () => (
     </table>
 );
 
-function getInfo(id, array) {
-    let url = 'https://api.tnyu.org/v3/memberships/' + id + '?include=member,position';
-    let info = fetch(url, {
-        method: 'GET',
-    })
-        .then((response) => response.json())
-        .then((responseData) => {
 
-            let person = {             
-                "name": responseData.included[0].attributes.name
-            }
-            
-            if (Constants.teams[responseData.included[1].relationships.team.data.id] != null) {
-                person["role"] = Constants.teams[responseData.included[1].relationships.team.data.id];
-                person["link"] = responseData.included[1].attributes.contact;
-            }   
-            console.log(person);
-        })
-}
-    
 
 
 class Board extends Component {
@@ -127,8 +108,34 @@ class Board extends Component {
         }
     }
 
-    
-    
+
+    getInfo(id, array) {
+        let url = 'https://api.tnyu.org/v3/memberships/' + id + '?include=member,position';
+        let info = fetch(url, {
+            method: 'GET',
+        })
+        .then((response) => response.json())
+        .then((responseData) => {
+
+            let person = {
+                "name": responseData.included[0].attributes.name
+            }
+
+            person["role"] = Constants.teams[responseData.included[1].relationships.team.data.id];
+            person["link"] = responseData.included[1].attributes.contact;
+            
+
+            if (person["role"] != null) {
+                let temp = this.state.boardMembers;
+                temp.push(person);
+                this.setState({boardMembers: temp});
+            }
+
+            
+        })
+    }
+
+
     getMembers() {
         let array = [];
         fetch('https://api.tnyu.org/v3/memberships', {
@@ -138,18 +145,18 @@ class Board extends Component {
             .then((responseData) => {
                 for (let i = 0; i < responseData.data.length; i++) {
                     if (responseData.data[i].attributes.isActive) {
-                        
+
                         let id = responseData.data[i].id;
-                        getInfo(id, array);
-                        
-                    }   
+                        this.getInfo(id, array);
+
+                    }
                 }
             });
-        
+
     }
 
     componentDidMount() {
-        this.getMembers(this.state.boardMembers); 
+        this.getMembers(this.state.boardMembers);
     }
 
 
@@ -167,34 +174,36 @@ class Board extends Component {
 
             memberPairs.push(pairs);
         }
+        console.log(memberPairs);
 
         return (
             <div id="board-members">
                 <div className="events">board members</div>
                 <table>
                     <tbody>
-                        {memberPairs.map( (obj, index) => {
-                            if (obj[1] != undefined) {
-                                return <tr key={index}>
-                                    <td className="cell-1">
-                                        <span className="member-name"> {obj[0].name}, {obj[0].role} </span> <br/>
-                                        <span > <a className = "member-handle" href={obj[0].link} target="__blank">@{obj[0].name}</a> </span>
-                                    </td>
-                                    <td className="cell-2">
-                                        <span className="member-name"> {obj[1].name}, {obj[1].role} </span> <br/>
-                                        <span > <a className="member-handle" href={obj[1].link} target="__blank">@{obj[1].name}</a> </span>
-                                    </td>
-                                </tr>
-                            }
-                            else {
-                                return <tr key={index}>
-                                    <td className="cell-1">
-                                        <span className="member-name"> {obj[0].name}, {obj[0].role} </span> <br/>
-                                        <span> <a className = "member-handle" href={obj[0].link} target="__blank">@{obj[0].name}</a>   </span>
-                                    </td>
-                                </tr>
-                            }
-                        })}
+                      {memberPairs.length > 0 && memberPairs.map( (obj, index) => {
+                                                 if (obj[1] != undefined) {
+                                                     return <tr key={index}>
+                                                         <td className="cell-1">
+                                                             <span className="member-name"> {obj[0].name}, {obj[0].role} </span> <br/>
+                                                             <span > <a className = "member-handle" href={obj[0].link} target="__blank">@{obj[0].name}</a> </span>
+                                                         </td>
+                                                         <td className="cell-2">
+                                                             <span className="member-name"> {obj[1].name}, {obj[1].role} </span> <br/>
+                                                             <span > <a className="member-handle" href={obj[1].link} target="__blank">@{obj[1].name}</a> </span>
+                                                         </td>
+                                                     </tr>
+                                                 }
+                                                 else {
+                                                     return <tr key={index}>
+                                                         <td className="cell-1">
+                                                             <span className="member-name"> {obj[0].name}, {obj[0].role} </span> <br/>
+                                                             <span> <a className = "member-handle" href={obj[0].link} target="__blank">@{obj[0].name}</a>   </span>
+                                                         </td>
+                                                     </tr>
+                                                 }
+                                             })}
+
                     </tbody>
                 </table>
                 <br/>

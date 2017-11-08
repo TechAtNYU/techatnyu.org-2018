@@ -23,7 +23,8 @@ const TeamIDs  = {
     '5440609d6b0287336dfc51cf': 'Startup Week',
     '53f99d8fc66b44cf6f8f6d83': 'Business Development',
     '53f54dd98d1e62ff12539dc3': 'Marketing',
-    '56410d72e24ad83b0635516f': 'Game Days'
+    '56410d72e24ad83b0635516f': 'Game Days',
+    '54dd377891cb57536feb469f': 'President'
 };
 
 class Footer extends Component {
