@@ -138,10 +138,8 @@ class Board extends Component {
         .then((responseData) => {
             for (let i = 0; i < responseData.data.length; i++) {
                 if (responseData.data[i].attributes.isActive) {
-
                     let id = responseData.data[i].id;
                     this.getInfo(id, array);
-
                 }
             }
         });
