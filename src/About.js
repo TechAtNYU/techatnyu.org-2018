@@ -106,7 +106,6 @@ class Board extends Component {
         }
     }
 
-
     getInfo(id, array) {
         let url = Constants.apiBase['test'] + 'memberships/' + id + '?include=member,position';
         let info = fetch(url, {
@@ -136,24 +135,22 @@ class Board extends Component {
         fetch('https://api.tnyu.org/v3/memberships', {
             method:'GET',
         })
-            .then((response) => response.json())
-            .then((responseData) => {
-                for (let i = 0; i < responseData.data.length; i++) {
-                    if (responseData.data[i].attributes.isActive) {
+        .then((response) => response.json())
+        .then((responseData) => {
+            for (let i = 0; i < responseData.data.length; i++) {
+                if (responseData.data[i].attributes.isActive) {
 
-                        let id = responseData.data[i].id;
-                        this.getInfo(id, array);
+                    let id = responseData.data[i].id;
+                    this.getInfo(id, array);
 
-                    }
                 }
-            });
-
+            }
+        });
     }
 
     componentDidMount() {
         this.getMembers(this.state.boardMembers);
     }
-
 
     render() {
 
@@ -175,27 +172,41 @@ class Board extends Component {
                 <table>
                     <tbody>
                       {memberPairs.length > 0 && memberPairs.map( (obj, index) => {
-                                                 if (obj[1] != undefined) {
-                                                     return <tr key={index}>
-                                                         <td className="cell-1">
-                                                             <span className="member-name"> {obj[0].name}, {obj[0].role} </span> <br/>
-                                                             <span > <a className = "member-handle" href={obj[0].link} target="__blank">@{obj[0].name}</a> </span>
-                                                         </td>
-                                                         <td className="cell-2">
-                                                             <span className="member-name"> {obj[1].name}, {obj[1].role} </span> <br/>
-                                                             <span > <a className="member-handle" href={obj[1].link} target="__blank">@{obj[1].name}</a> </span>
-                                                         </td>
-                                                     </tr>
-                                                 }
-                                                 else {
-                                                     return <tr key={index}>
-                                                         <td className="cell-1">
-                                                             <span className="member-name"> {obj[0].name}, {obj[0].role} </span> <br/>
-                                                             <span> <a className = "member-handle" href={obj[0].link} target="__blank">@{obj[0].name}</a>   </span>
-                                                         </td>
-                                                     </tr>
-                                                 }
-                                             })}
+                         if (obj[1] != undefined) {
+                             return <tr key={index}>
+                                 <td className="cell-1">
+                                    <span className="member-name">
+                                        {obj[0].name}, {obj[0].role}
+                                    </span>
+                                     <br/>
+                                     <span>
+                                        <a className = "member-handle" href={obj[0].link} target="__blank">@{obj[0].name}</a>
+                                     </span>
+                                 </td>
+                                 <td className="cell-2">
+                                     <span className="member-name">
+                                        {obj[1].name}, {obj[1].role}
+                                    </span>
+                                    <br/>
+                                     <span>
+                                        <a className="member-handle" href={obj[1].link} target="__blank">@{obj[1].name}</a>
+                                    </span>
+                                 </td>
+                             </tr>
+                         } else {
+                             return <tr key={index}>
+                                 <td className="cell-1">
+                                     <span className="member-name">
+                                        {obj[0].name}, {obj[0].role}
+                                    </span>
+                                    <br/>
+                                     <span>
+                                        <a className = "member-handle" href={obj[0].link} target="__blank">@{obj[0].name}</a>
+                                    </span>
+                                 </td>
+                             </tr>
+                         }
+                     })}
 
                     </tbody>
                 </table>
