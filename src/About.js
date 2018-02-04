@@ -121,7 +121,6 @@ class Board extends Component {
             person["role"] = Constants.teams[responseData.included[1].relationships.team.data.id];
             person["link"] = responseData.included[1].attributes.contact;
             
-
             if (person["role"] != null) {
                 let temp = this.state.boardMembers;
                 temp.push(person);
