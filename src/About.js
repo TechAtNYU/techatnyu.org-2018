@@ -97,8 +97,6 @@ const Teams = () => (
 );
 
 
-
-
 class Board extends Component {
 
     constructor(props) {
@@ -110,7 +108,7 @@ class Board extends Component {
 
 
     getInfo(id, array) {
-        let url = 'https://api.tnyu.org/v3/memberships/' + id + '?include=member,position';
+        let url = Constants.apiBase['test'] + 'memberships/' + id + '?include=member,position';
         let info = fetch(url, {
             method: 'GET',
         })
@@ -130,11 +128,8 @@ class Board extends Component {
                 temp.push(person);
                 this.setState({boardMembers: temp});
             }
-
-            
         })
     }
-
 
     getMembers() {
         let array = [];
@@ -163,7 +158,6 @@ class Board extends Component {
     render() {
 
         let memberPairs = [];
-        console.log(this.state.boardMembers);
         // Pair members together to put them in the table
         for (let i = 0; i < this.state.boardMembers.length; i+=2) {
 
@@ -174,7 +168,6 @@ class Board extends Component {
 
             memberPairs.push(pairs);
         }
-        console.log(memberPairs);
 
         return (
             <div id="board-members">
