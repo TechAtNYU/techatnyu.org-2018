@@ -131,7 +131,7 @@ class Board extends Component {
 
     getMembers() {
         let array = [];
-        fetch('https://api.tnyu.org/v3/memberships', {
+        fetch(Constants.apiBase['test'] + 'memberships', {
             method:'GET',
         })
         .then((response) => response.json())
