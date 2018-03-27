@@ -18,7 +18,7 @@ app.use(webpackDevMiddleware(compiler, {
   historyApiFallback: true,
 }));
  
-app.get('/anti-harrassment', function(req, res) {
+app.get('/anti-harassment', function(req, res) {
   res.redirect('/#/policy');
 })
 
