@@ -4,29 +4,29 @@ import Constants from './Constants'
 
 
 class EmailForm extends Component {
-  	constructor(props) {
+  constructor(props) {
 		super(props);
 		this.state = {
-            value: "Enter your email"
+            value: "Enter your email",
 		};
 	}
-  	handleChange (evt) {
-	    this.setState({
-	      value: evt.target.value
-	    });
+  handleChange (evt) {
+	   this.setState({
+	     value: evt.target.value
+	   });
 	}
 	submitChange (email) {
-		console.log(email);
+		window.location = 'https://mailtrain.tnyu.org/subscription/ryeVfPjte?email=' + this.state.value + '&subscribe=Sign+Up';
 	}
 	render () {
 		return(
 			<div id="signup-form">
 			        <p> Be the first to know about upcoming events and opportunities. </p><br/>
 			        <form>
-			        	<input type="email" placeholder={this.state.value} onChange={this.handleChange}/>
+			        	<input type="email" placeholder={this.state.value} onChange={this.handleChange.bind(this)}/>
 				        <button onClick={()=>this.submitChange(this.state.value)} type="submit" className="btn btn-success">
-		                	<i className="material-icons arrow-submit">arrow_forward</i>
-	            		</button>
+		               <i className="material-icons arrow-submit">arrow_forward</i>
+	            	</button>
 			        </form>
 	    	</div>
 		);
