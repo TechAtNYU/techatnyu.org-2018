@@ -7,24 +7,24 @@ class EmailForm extends Component {
   constructor(props) {
 		super(props);
 		this.state = {
-            value: "Enter your email",
+            email: "Enter your email"
 		};
 	}
   handleChange (evt) {
 	   this.setState({
-	     value: evt.target.value
+	     email: evt.target.value
 	   });
 	}
 	submitChange (email) {
-		window.location = 'https://mailtrain.tnyu.org/subscription/ryeVfPjte?email=' + this.state.value + '&subscribe=Sign+Up';
+		window.location = 'https://mailtrain.tnyu.org/subscription/ryeVfPjte?email=' + this.state.email + '&subscribe=Sign+Up';
 	}
 	render () {
 		return(
 			<div id="signup-form">
 			        <p> Be the first to know about upcoming events and opportunities. </p><br/>
 			        <form>
-			        	<input type="email" placeholder={this.state.value} onChange={this.handleChange.bind(this)}/>
-				        <button onClick={()=>this.submitChange(this.state.value)} type="submit" className="btn btn-success">
+			        	<input type="email" placeholder={this.state.email} onChange={this.handleChange.bind(this)}/>
+				        <button onClick={()=>this.submitChange(this.state.email)} type="submit" className="btn btn-success">
 		               <i className="material-icons arrow-submit">arrow_forward</i>
 	            	</button>
 			        </form>
