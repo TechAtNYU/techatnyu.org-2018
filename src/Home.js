@@ -7,7 +7,7 @@ class EmailForm extends Component {
   constructor(props) {
 		super(props);
 		this.state = {
-            email: "Enter your email"
+            email: "Enter your email",
 		};
 	}
   handleChange (evt) {
@@ -15,8 +15,18 @@ class EmailForm extends Component {
 	     email: evt.target.value
 	   });
 	}
+  validate (email) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      return true;
+    }
+    return false;
+  }
 	submitChange (email) {
-		window.location = 'https://mailtrain.tnyu.org/subscription/ryeVfPjte?email=' + this.state.email + '&subscribe=Sign+Up';
+    if(this.validate (email)){
+      const mailtrain = 'https://mailtrain.tnyu.org/subscription/ryeVfPjte?email=' + email + '&subscribe=Sign+Up';
+      var newWindow = window.open(mailtrain, '_blank');
+      newWindow.focus();
+    }
 	}
 	render () {
 		return(
