@@ -17,6 +17,7 @@ class EmailForm extends Component {
 	}
   validate (email) {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      //source for regex validation: https://www.w3resource.com/javascript/form/email-validation.php
       return true;
     }
     return false;
