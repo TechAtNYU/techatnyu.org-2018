@@ -4,30 +4,30 @@ import Constants from './Constants'
 
 
 class EmailForm extends Component {
-  constructor(props) {
+  	constructor(props) {
 		super(props);
 		this.state = {
             email: "Enter your email",
 		};
 	}
-  handleChange (evt) {
+  	handleChange (evt) {
 	   this.setState({
 	     email: evt.target.value
 	   });
 	}
-  validate (email) {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      //source for regex validation: https://www.w3resource.com/javascript/form/email-validation.php
-      return true;
-    }
-    return false;
-  }
+  	validate (email) {
+	    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+	      //source for regex validation: https://www.w3resource.com/javascript/form/email-validation.php
+	      return true;
+	    }
+	    return false;
+  	}
 	submitChange (email) {
-    if(this.validate (email)){
-      const mailtrain = 'https://mailtrain.tnyu.org/subscription/ryeVfPjte?email=' + email + '&subscribe=Sign+Up';
-      var newWindow = window.open(mailtrain, '_blank');
-      newWindow.focus();
-    }
+	    if(this.validate (email)){
+	      const mailtrain = 'https://mailtrain.tnyu.org/subscription/ryeVfPjte?email=' + email + '&subscribe=Sign+Up';
+	      var newWindow = window.open(mailtrain, '_blank');
+	      newWindow.focus();
+	    }
 	}
 	render () {
 		return(
