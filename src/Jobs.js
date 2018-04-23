@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch, Link } from 'react-router';
 import Constants from './Constants';
-import {IndexLink} from "react-router";
+import { IndexLink } from "react-router";
 import Modal from "react-modal"
 import axios from "axios"
 
@@ -46,8 +46,11 @@ class JobsCard extends Component {
               <div id="myModal" className="modal">
                   <div className="modal-content">
                     <div className = "page-intro">
-                      <span className="job-title">{this.props.job.attributes.positionTitle}</span><br/>
-                      <span> {this.props.job.attributes.positionLevel} </span><br/><br/>
+                      <span className="job-title">{this.props.job.attributes.positionTitle}</span>
+                      <br/>
+                      <span> {this.props.job.attributes.positionLevel} </span>
+                      <br/>
+                      <br/>
                       <div dangerouslySetInnerHTML={{__html: this.props.job.attributes.description }} />
                       <div>Expires At: {this.props.job.attributes.exiresAt.substring(0, this.props.job.attributes.exiresAt.indexOf('T'))}</div>
                       <button className = "close-modal" onClick = {() => {this.setState({modalIsOpen: false})}}> Close Modal</button>
@@ -59,29 +62,6 @@ class JobsCard extends Component {
               }
             </div>
               )
-
-              // <!-- Trigger/Open The Modal -->
-
-
-        // <Modal
-        //   isOpen={this.state.modalIsOpen}
-        //   onRequestClose = {this.closeModal}
-        //   style= {this.state.customStyles}
-        //   contentLabel= "Example Modal">
-        //
-        //     <div className = "page-intro" id  = "page-intro">
-        //     <div> {this.props.job.attributes.positionTitle} </div>
-        //     <div> Salary: IDK YET</div>
-        //     <div dangerouslySetInnerHTML={{__html: this.props.job.attributes.description }} /></div>
-        //     <a target="_blank" href = {`${this.props.job.attributes.applicationUrl}`}>
-        //         <button> Job Link </button>
-        //     </a>
-        //
-        //     <button onClick = {() => this.closeModal()}> Close </button>
-        //
-        // </Modal>
-        //     </div>
-
     }
 }
 
