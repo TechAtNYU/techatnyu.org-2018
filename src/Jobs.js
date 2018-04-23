@@ -63,7 +63,7 @@ class JobsCard extends Component {
                       :
                       this.setState({modalHasApplylicationLink: false})
                       }
-                      <button className = "modal-button" onClick = {() => {this.setState({modalIsOpen: false})}}> Close Modal</button>
+                      <button className = "modal-button" onClick = {() => {this.setState({modalIsOpen: false})}}> Close </button>
                     </div>
                   </div>
                 </div>
