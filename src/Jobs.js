@@ -20,7 +20,8 @@ class JobsCard extends Component {
         this.state =  {
             modalIsOpen: false,
             data: [],
-            modal: document.getElementById('myModal')
+            modal: document.getElementById('myModal'),
+            modalHasApplylicationLink: true
         }
         this.openModal = this.openModal.bind(this);
     }
@@ -53,7 +54,16 @@ class JobsCard extends Component {
                       <br/>
                       <div dangerouslySetInnerHTML={{__html: this.props.job.attributes.description }} />
                       <div>Expires At: {this.props.job.attributes.exiresAt.substring(0, this.props.job.attributes.exiresAt.indexOf('T'))}</div>
-                      <button className = "close-modal" onClick = {() => {this.setState({modalIsOpen: false})}}> Close Modal</button>
+                      { this.props.job.attributes.applicationUrl != undefined ?
+                      <div>
+                        <button className = "modal-button">
+                          <a target="_blank" href = {`${this.props.job.attributes.applicationUrl}`}> Apply </a>
+                        </button>
+                      </div>
+                      :
+                      this.setState({modalHasApplylicationLink: false})
+                      }
+                      <button className = "modal-button" onClick = {() => {this.setState({modalIsOpen: false})}}> Close Modal</button>
                     </div>
                   </div>
                 </div>
