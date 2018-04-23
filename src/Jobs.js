@@ -19,7 +19,8 @@ class JobsCard extends Component {
         super(props);
         this.state =  {
             modalIsOpen: false,
-            data: []
+            data: [],
+            modal: document.getElementById('myModal')
         }
         this.openModal = this.openModal.bind(this);
     }
@@ -44,11 +45,13 @@ class JobsCard extends Component {
               { this.state.modalIsOpen == true ?
               <div id="myModal" className="modal">
                   <div className="modal-content">
-                    <span className="job-title">{this.props.job.attributes.positionTitle}</span><br/>
-                    <span> {this.props.job.attributes.positionLevel} </span><br/><br/>
-                    <div dangerouslySetInnerHTML={{__html: this.props.job.attributes.description }} />
-                    <div>Expires At: {this.props.job.attributes.exiresAt.substring(0, this.props.job.attributes.exiresAt.indexOf('T'))}</div>
-                    <button className = "close-modal" onClick = {() => {this.setState({modalIsOpen: false})}}> Close Modal</button>
+                    <div className = "page-intro">
+                      <span className="job-title">{this.props.job.attributes.positionTitle}</span><br/>
+                      <span> {this.props.job.attributes.positionLevel} </span><br/><br/>
+                      <div dangerouslySetInnerHTML={{__html: this.props.job.attributes.description }} />
+                      <div>Expires At: {this.props.job.attributes.exiresAt.substring(0, this.props.job.attributes.exiresAt.indexOf('T'))}</div>
+                      <button className = "close-modal" onClick = {() => {this.setState({modalIsOpen: false})}}> Close Modal</button>
+                    </div>
                   </div>
                 </div>
                 :

@@ -333,6 +333,19 @@ hr {
   color: #4A1723 !important;
 }
 
+/*Background when Modal is activated*/
+.modal {
+    position: fixeds; /* Stay in place */
+     z-index: 1; /* Sits on top of everything */
+    // left: 25%;
+    // top: 25%;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    // background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
 
 /* Modal Width and Height*/
 .modal-content {
@@ -344,7 +357,7 @@ hr {
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
 
 
