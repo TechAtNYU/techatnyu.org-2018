@@ -56,14 +56,14 @@ class JobsCard extends Component {
                       <div>Expires At: {this.props.job.attributes.exiresAt.substring(0, this.props.job.attributes.exiresAt.indexOf('T'))}</div>
                       { this.props.job.attributes.applicationUrl != undefined ?
                       <div>
-                        <button className = "modal-button">
+                        <button className = "modal-button-apply">
                           <a target="_blank" href = {`${this.props.job.attributes.applicationUrl}`}> Apply </a>
                         </button>
                       </div>
                       :
                       this.setState({modalHasApplylicationLink: false})
                       }
-                      <button className = "modal-button" onClick = {() => {this.setState({modalIsOpen: false})}}> Close </button>
+                      <button className = "modal-button-close" onClick = {() => {this.setState({modalIsOpen: false})}}> Close </button>
                     </div>
                   </div>
                 </div>
@@ -109,7 +109,6 @@ class Jobs extends Component{
                     </div>
                 </div>
                 <div id="jobs-container">
-                    {console.log('In render method', this.state.data)}
                     {this.state.data.length !== 0 ? this.state.data.map( (obj, index) => {
                         return <JobsCard key={index} job={obj}/>
                     }) : console.log("Unavailable")}
