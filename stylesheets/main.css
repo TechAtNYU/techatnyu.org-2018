@@ -1,0 +1,653 @@
+body {
+  background-color: #f6f6f6;
+  font-family: "Rubik", sans-serif;
+  color: #404040; }
+
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 7vh;
+  background-color: #f05158;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+.navbar-content {
+  font-weight: 400;
+  color: #f6f6f6;
+  margin: 0 auto;
+  text-align: center; }
+
+.navbar-content ul {
+  padding: 0; }
+
+.navbar-content li {
+  display: inline-block;
+  margin-right: 2vw;
+  margin-left: 2vw;
+  margin-top: 0.4vh;
+  font-size: 2vmin; }
+
+.navbar-content a {
+  display: inline-block;
+  text-decoration: none;
+  color: white; }
+
+.navbar-content a:hover {
+  cursor: pointer;
+  color: #4A1723; }
+
+.navbar-content a:after {
+  color: #4A1723; }
+
+#tnyu-title {
+  font-weight: 700;
+  margin-top: 20vh;
+  text-align: center;
+  color: #f05158;
+  font-size: 5.5vmin; }
+
+#tnyu-title h1 {
+  margin-bottom: 2vh; }
+
+#signup-form {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3vmin; }
+
+#signup-form p {
+  color: #f05158;
+  font-weight: 400;
+  margin-bottom: 0vh;
+  font-size: 1.9vmin; }
+
+#signup-form input {
+  margin-top: -1vh;
+  width: 26.5em;
+  height: 2.5em;
+  font-size: 1.8vmin;
+  text-indent: 2vmin;
+  font-weight: 400;
+  vertical-align: top; }
+
+#signup-form input:focus {
+  outline: none; }
+
+#signup-form button {
+  background-color: #f05158;
+  color: #f6f6f6;
+  font-weight: 100;
+  text-shadow: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 2em;
+  height: 2em;
+  font-size: 2.5vmin;
+  vertical-align: top;
+  margin-top: -0.8vh; }
+
+#signup-form button:hover {
+  background-color: #d2545d; }
+
+.arrow-submit {
+  padding-top: 0.6vh;
+  font-size: 3vmin; }
+
+#main-slider {
+  width: 55vw;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  margin-top: 9vh; }
+
+#mobile-events {
+  margin: 0 auto;
+  margin-top: 9vh;
+  text-align: center; }
+
+#tnyu-teams {
+  font-weight: 400;
+  color: #939393;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2.2vmin; }
+
+#tnyu-teams ul li {
+  padding: 0;
+  display: inline-block;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
+  margin-top: 2vh; }
+
+#tnyu-teams ul li a {
+  color: #ababab;
+  text-decoration: none; }
+
+.event-card {
+  font-size: 1.8vmin;
+  display: inline-block;
+  text-align: left;
+  width: 16.5vw;
+  height: 30vh;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  margin-bottom: 1vw;
+  background-color: white;
+  vertical-align: top;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+.event-card:hover {
+  background-color: #f05158;
+  color: white;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2); }
+
+.event-card:hover .event-title {
+  color: white; }
+
+.event-card:hover .event-team {
+  color: white; }
+
+.event-card:hover .event-date {
+  color: white; }
+
+.event-card:hover .line-break {
+  border-color: white; }
+
+.event-card:hover .event-rsvp a {
+  color: white; }
+
+.event-card hr {
+  width: 13.75vw;
+  position: absolute;
+  bottom: 4vh;
+  margin-left: 1.3vw;
+  border: none;
+  height: 1px;
+  color: #d9d9d9;
+  background-color: #d9d9d9; }
+
+.event-title {
+  color: #f05158;
+  font-size: 1em;
+  margin-top: 3vh;
+  margin-left: 1.2em;
+  margin-right: 1.2em;
+  text-transform: uppercase; }
+
+.event-team {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #F9AD96;
+  margin-left: 1.4em; }
+
+.event-description {
+  font-weight: 400;
+  margin-left: 1.3em;
+  margin-right: 1.3em;
+  font-size: 1em; }
+
+.event-date {
+  position: absolute;
+  left: 1.3vw;
+  bottom: 0;
+  font-weight: 400;
+  color: #ababab;
+  font-size: 1.8vmin; }
+
+.event-rsvp {
+  position: absolute;
+  bottom: 0vh;
+  right: 1.7vw; }
+
+.event-rsvp a {
+  color: #f05158;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.8vmin;
+  padding-top: 5vmin; }
+
+.arrow {
+  font-size: 10vh;
+  color: #f05158;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 8vh; }
+
+#tnyu-description {
+  text-align: center;
+  margin-top: 7vh;
+  margin-bottom: 10vh;
+  font-weight: 400;
+  color: #f05158;
+  font-size: 3.5vmin; }
+
+#footer {
+  margin: 0 auto;
+  text-align: center;
+  color: #ababab;
+  font-weight: 400;
+  display: inline; }
+
+#footer hr {
+  margin-top: 15vh;
+  margin-bottom: 2vh;
+  height: 1px;
+  width: 53vw;
+  border: none;
+  background-color: #d9d9d9; }
+
+#footer-content {
+  text-align: center;
+  position: relative;
+  font-size: 1.8vmin;
+  margin-left: 4vh;
+  margin-right: 3vh;
+  margin-top: 4vh;
+  margin-bottom: 10vh; }
+
+#copyright {
+  display: inline;
+  position: absolute;
+  left: 21vw; }
+
+#social-handles {
+  display: inline;
+  position: absolute;
+  right: 21vw; }
+
+#social-handles a {
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  text-decoration: none;
+  color: #ababab; }
+
+#social-handles a:hover {
+  color: #939393; }
+
+hr {
+  border: 0.4px solid gray; }
+
+.slick-prev:before {
+  color: #f05158;
+  font-size: 3vmin;
+  font-weight: 800; }
+
+.slick-next:before {
+  color: #f05158;
+  font-size: 3vmin;
+  font-weight: 800; }
+
+.active {
+  color: #4A1723 !important; }
+
+@media screen and (min-width: 0px) and (max-width: 1150px) {
+  #main-slider {
+    display: none; }
+  #mobile-events {
+    display: block; } }
+
+@media screen and (min-width: 1151px) {
+  #main-slider {
+    display: block; }
+  #mobile-events {
+    display: none; } }
+
+.page-title {
+  color: #f05158;
+  position: absolute;
+  font-size: 7vmin;
+  left: 22vw;
+  top: 17vh;
+  z-index: 1000; }
+
+.not-found {
+  color: #f05158;
+  position: absolute;
+  font-size: 8vmin;
+  left: 22vw;
+  top: 10vh;
+  z-index: 1000;
+  font-weight: 400; }
+
+.page-content {
+  margin-left: 40.5vw;
+  margin-top: 25vh;
+  text-align: left; }
+
+.question-answer {
+  width: 35vw;
+  margin-bottom: 5vh; }
+
+.question {
+  font-weight: 700;
+  color: #f05158;
+  margin-bottom: 2vh;
+  font-size: 2.5vmin; }
+
+.answer {
+  font-weight: 400;
+  font-size: 1.8vmin;
+  color: black; }
+
+.answer a {
+  color: #F08080;
+  text-decoration: underline; }
+
+.email-us {
+  width: 35vw;
+  font-weight: 400;
+  color: #F08080;
+  font-size: 2.8vmin;
+  margin-bottom: 10vh;
+  margin-top: 10vh; }
+
+.email-us a {
+  text-decoration: underline;
+  color: #F08080; }
+
+.tech-description {
+  font-weight: 400;
+  width: 35vw;
+  font-size: 1.8vmin;
+  margin-bottom: 10vh; }
+
+.events {
+  font-size: 4.5vmin;
+  font-weight: 700;
+  color: #f05158;
+  margin-bottom: 5vh;
+  margin-top: 3vh; }
+
+#events-line {
+  margin-top: -5vh;
+  margin-bottom: -5vh;
+  border-color: #f05158;
+  width: 8vw; }
+
+#dots {
+  left: 24vw;
+  top: 18vh;
+  position: absolute;
+  width: 50vh;
+  z-index: -1; }
+
+#clock {
+  left: -4vw;
+  top: 70vh;
+  position: absolute;
+  width: 28vh;
+  z-index: -1; }
+
+#squiggly {
+  left: 2vw;
+  top: 85vh;
+  position: absolute;
+  width: 25vh;
+  z-index: -1; }
+
+#comment-img {
+  right: -4vw;
+  top: 205vh;
+  position: absolute;
+  width: 25vh;
+  z-index: -1; }
+
+#tnyu-teams-about {
+  font-weight: 400;
+  margin: 0 auto; }
+
+.team-name {
+  text-align: right;
+  padding-right: 0vw;
+  padding-left: 6vw;
+  color: #f05158;
+  font-size: 3.2vmin;
+  padding-bottom: 4vw;
+  vertical-align: top; }
+
+.team-description {
+  width: 35vw;
+  text-align: left;
+  color: black;
+  font-size: 1.8vmin;
+  padding-right: 8vw;
+  padding-left: 5vw;
+  padding-bottom: 4vw;
+  vert-align: top; }
+
+#policy {
+  width: 35vw;
+  font-size: 1.8vmin;
+  font-weight: 400;
+  padding-top: 7vh;
+  padding-bottom: 7vh; }
+
+#anti-harassment {
+  margin-left: 40.5vw;
+  width: 35vw;
+  font-weight: 400;
+  margin-bottom: 10vh; }
+
+.page-intro {
+  width: 35vw;
+  font-weight: 400;
+  margin-bottom: 15vh;
+  font-size: 1.8vmin; }
+
+#job-opps {
+  position: absolute;
+  left: 3vw;
+  top: 70vh; }
+
+#dots-2 {
+  width: 50vh;
+  z-index: -1;
+  position: absolute; }
+
+#employer-contact {
+  z-index: 100;
+  position: absolute;
+  width: 13vw;
+  font-weight: 400;
+  left: 10vw;
+  top: 2vh; }
+
+#libraries {
+  margin-left: 40.5vw;
+  color: #f05158;
+  font-weight: 400; }
+
+.lib-title {
+  font-size: 3vmin;
+  font-weight: 700; }
+
+.library {
+  margin-bottom: 8vh; }
+
+.articles {
+  font-size: 1.8vmin; }
+
+#jobs-container {
+  margin-bottom: 16vh; }
+
+.jobs-card {
+  position: relative;
+  z-index: 0;
+  background-color: white;
+  width: 52vw;
+  height: 18vh;
+  margin: 0 auto;
+  margin-bottom: 3vh;
+  box-shadow: 0px 1.5px 1.5px #ababab;
+  font-weight: 400; }
+
+.job-apply {
+  position: absolute;
+  z-index: 1;
+  height: 18vh;
+  background-color: #f05158;
+  right: 0;
+  top: 0;
+  width: 10vw;
+  text-align: center;
+  color: white;
+  font-size: 2vmin;
+  font-weight: 400; }
+
+.job-apply p {
+  margin-top: 7.5vh; }
+
+.job-title {
+  color: #f05158;
+  text-decoration: underline; }
+
+.job-content {
+  font-size: 1.8vmin;
+  padding-top: 3vh;
+  padding-left: 1.5vw;
+  width: 20vw; }
+
+#team-photo {
+  position: absolute;
+  top: 230vh;
+  left: 15vw;
+  width: 20vw;
+  height: 15vw;
+  box-shadow: 2px 2px 5px #ababab;
+  transform: rotate(-5deg); }
+
+#board-members {
+  margin-top: 3vh;
+  margin-left: 40.5vw;
+  margin-bottom: 10vh; }
+
+.cell-1 {
+  padding-right: 3vw;
+  padding-bottom: 2.5vh; }
+
+.cell-2 {
+  padding-bottom: 2.5vh; }
+
+.member-name {
+  font-size: 1.8vmin;
+  font-weight: 400; }
+
+.member-handle {
+  font-size: 1.8vmin;
+  color: #f05158;
+  text-decoration: underline;
+  margin-left: 3vw;
+  font-weight: 400; }
+
+#alum-link {
+  font-weight: 700;
+  color: #f05158;
+  text-decoration: underline;
+  font-size: 2vmin;
+  cursor: pointer; }
+
+#sponsor-list {
+  margin-left: 40.5vw;
+  margin-bottom: 12vh; }
+
+.sponsor-description {
+  font-weight: 400;
+  width: 35vw;
+  font-size: 1.8vmin;
+  margin-bottom: 10vh; }
+
+#sponsor-slider {
+  width: 30vw;
+  margin-left: 1vw; }
+
+.sponsor-img {
+  margin-left: 1.5vw;
+  margin-right: 1.5vw; }
+
+.event-mobile {
+  margin-bottom: 3vh; }
+
+.event-card-mobile {
+  font-size: 10px;
+  display: inline-block;
+  text-align: left;
+  width: 210px;
+  height: 220px;
+  margin-right: 1.5vw;
+  margin-left: 1.5vw;
+  margin-bottom: 1vw;
+  background-color: white;
+  vertical-align: top;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); }
+
+.event-card-mobile hr {
+  width: 185px;
+  position: absolute;
+  bottom: 4vh;
+  margin-left: 1em;
+  border: none;
+  height: 1px;
+  color: #d9d9d9;
+  background-color: #d9d9d9; }
+
+.event-card-mobile:hover {
+  background-color: #f05158;
+  color: white;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2); }
+
+.event-card-mobile:hover .event-title-mobile {
+  color: white; }
+
+.event-card-mobile:hover .event-team-mobile {
+  color: white; }
+
+.event-card-mobile:hover .event-date-mobile {
+  color: white; }
+
+.event-card-mobile:hover .line-break {
+  border-color: white; }
+
+.event-card-mobile:hover .event-rsvp-mobile a {
+  color: white; }
+
+.event-title-mobile {
+  color: #f05158;
+  font-size: 1.1em;
+  margin-top: 3vh;
+  margin-left: 1em; }
+
+.event-team-mobile {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #F08080;
+  margin-left: 1.4em; }
+
+.event-description-mobile {
+  font-weight: 400;
+  margin-left: 1.3em;
+  margin-right: 1.3em;
+  font-size: 1em; }
+
+.event-date-mobile {
+  position: absolute;
+  left: 1em;
+  bottom: 0;
+  font-weight: 400;
+  color: #ababab;
+  font-size: 1em; }
+
+.event-rsvp-mobile {
+  position: absolute;
+  bottom: 0vh;
+  right: 1.5em; }
+
+.event-rsvp-mobile a {
+  color: #f05158;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1em;
+  padding-top: 1em; }
